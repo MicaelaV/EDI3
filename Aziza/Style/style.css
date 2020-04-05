@@ -54,8 +54,13 @@ iframe{ max-width:100%;
 
 }
 
-nav a, header a {
-	color: #FF28E8;
+nav a{
+	color:#FFa8F4;
+ 	/*font-weight: 700;*/
+}
+
+header a {
+	color:#ff28e8;
  	/*font-weight: 700;*/
 }
 
@@ -69,7 +74,7 @@ footer div a i {
 }
 
 .bodystyle footer{
-	background-color:#e4b6d5;
+	background-color:#e0a5cd;
 	font-family: 'Patrick Hand SC', cursive;	
 }
 
@@ -79,6 +84,8 @@ footer {
   bottom:0px;
   height:60px;
   width:100%;
+  font-weight: bold;
+  /* font-variant: small-caps; */
 }
 
 /*Boton Flotante*/

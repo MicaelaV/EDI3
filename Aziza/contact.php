@@ -37,13 +37,13 @@
 				<div class="row">
 
 					<div class="col-md-6">  
-						<form>
+						<form action="email/send.php" method="POST">
 							<div class="row">
 								<div class="col-sm-6">
 									<label><p class="text-center">Nombre</p></label>
 								</div>
 								<div class="col-sm-6">
-									<input type="text" name="name" maxlength="10" class="validate">
+									<input type="text" id="nombre" name="nombre" maxlength="10" class="validate">
 								</div>
 							</div>
 							<div class="row">
@@ -59,7 +59,7 @@
 									<label><p class="text-center">E-mail</p></label>
 								</div>
 								<div class="col-sm-6">
-									<input type="email" name="email-contact" class="validate">
+									<input type="email" name="address" id="address" class="validate">
 								</div>
 							</div>							
 							<div class="row">

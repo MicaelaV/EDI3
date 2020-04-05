@@ -12,7 +12,11 @@ $resultado = $conexion -> query($consulta);
 $row=mysqli_fetch_array($resultado);
  if(is_null($row)){
    //echo "Sin resultado";
-   	echo "password mal";
+   	//echo "password mal";		
+   	echo '<script>
+	alert("Contraseña incorrecta, reintentelo");
+	window.location="../login.php";
+     </script>';
   
    }else{ 
     session_start();

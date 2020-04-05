@@ -1,6 +1,6 @@
 <div class="container">
-	<nav class="navbar navbar-expand-md bg-light">
-		<button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+	<nav class="navbar navbar-expand-md bg-dark">
+		<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 		<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -12,10 +12,10 @@
 			<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
 				Productos
 			</a>
-				<ul class="dropdown-menu">
+				<ul class="dropdown-menu bg-dark">
 					<li>
-						<a class="trigger right-caret">Bijou</a>
-						<ul class="dropdown-menu sub-menu">
+						<a class="trigger right-caret" href="#">Bijou</a>
+						<ul class="dropdown-menu sub-menu bg-dark">
 							<li><a href="productos.php?idProducto=1">Anillos</a></li>
 							<li><a href="productos.php?idProducto=2">Aros</a></li>
 							<li><a href="productos.php?idProducto=3">Collares</a></li>

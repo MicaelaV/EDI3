@@ -27,7 +27,7 @@ $con = mysqli_connect("localhost","root","","aziza");
 
 if (isset($mProducto)&& (is_numeric($mProducto))) {
     echo "UPDATEE";      
-    mysqli_query($con, "UPDATE productos set img='$imagen_final',nproducto='$descripcion',idTipo = '$tipoProducto', precio = '$precio' WHERE idProducto='$mProducto' LIMIT 1"); //WHERE idProducto='$mProducto'"  
+    mysqli_query($con, "UPDATE productos set nproducto='$descripcion', idTipo = '$tipoProducto', precio = '$precio' WHERE idProducto='$mProducto' LIMIT 1"); //WHERE idProducto='$mProducto'"  
 }else{
     echo "INSERTT";
     mysqli_query($con, "INSERT INTO productos (img,idTipo,nproducto,precio)VALUES('$imagen_final', '$tipoProducto','$descripcion','$precio');");

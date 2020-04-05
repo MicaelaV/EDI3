@@ -15,7 +15,7 @@
 
 	
 
-	if($cant==0){
+	if !($cant==0){
         mysqli_query($con, "insert into usuarios (nombre, apellido, email, password,telefono,tipoUsuario) 
                             values ('$nombre','$apellido','$email',md5('$password'),'$tel',2)");
         session_start();

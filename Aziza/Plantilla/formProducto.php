@@ -32,10 +32,15 @@ mysqli_close($con);
                     <select name="tipoProducto" id="tipoProducto" >
                         <?php
                         While($rowTipoProducto = mysqli_fetch_array($rTipoProducto,MYSQLI_ASSOC)){?>
-                            <option value="<?php echo $rowTipoProducto['idTipo']; ?>" ><?php echo $rowTipoProducto['descripcion'];?></option>
+                            <option value="<?php echo $rowTipoProducto['idTipo']; ?>"<?php 
+                             if($rowDatosProd['idTipo']==$rowTipoProducto['idTipo']){ echo 'selected'; } ?>>
+                                <?php
+                             echo $rowTipoProducto['descripcion'];?>                  
+                            </option>
                         <?php } ?>
-                    </select>
-                </div>
+               
+                 </select>
+            </div>
             </div>
             <div class="row">
                 <div class="col-sm-6">
