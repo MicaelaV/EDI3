@@ -15,7 +15,7 @@
    $con = mysqli_connect("localhost","root","","aziza");
 	mysqli_set_charset($con,'utf8');
 
-	$sql = "select p.idProducto, p.nproducto, p.img, p.idTipo, p.precio, tp.descripcion from productos p INNER JOIN tipoproductos tp on tp.idTipo = p.idTipo where p.idTipo= $idProducto";
+	$sql = "select p.idProducto, p.nproducto, p.img, p.idTipo, p.precio, tp.descripcion from productos p INNER JOIN tipoproductos tp on tp.idTipo = p.idTipo where p.idTipo= $idProducto and habilitado=1";
 	$r = mysqli_query($con, $sql);
 
 	mysqli_close($con);
@@ -30,9 +30,9 @@
 <head>
 	<title>Productos</title>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="Style/style.css">
+		<link rel="stylesheet" href="css/style.css">
 			<!-- Fuente -->
-		<link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Patrick+Hand+SC&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 		  <!-- Required meta tags -->   
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		  <!-- Bootstrap CSS -->
@@ -101,7 +101,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>	
-	<script src="JavaScript/main.js"></script> 
+	<script src="js/main.js"></script> 
 	<script>
 		function show(){
 

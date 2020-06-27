@@ -39,10 +39,10 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "mail";
+$mail->Username = "ibarraevee@gmail.com";
 
 //Password to use for SMTP authentication
-$mail->Password = "password";
+$mail->Password = "polentaconsalsa";
 
 //Set who the message is to be sent from
 $mail->setFrom('savonen@itbeltran.com.ar', utf8_decode('Aziza'));
@@ -68,15 +68,15 @@ $mail->AltBody = 'Este es un cuerpo de mensaje de texto sin formato';
 //send the message, check for errors
 if(!$mail->send()){
 	echo '<script>
-	alert("Ocurrio un error al enviar el mensaje");
-	window.history.go(-1);
-     </script>';
+	       alert("Ocurrio un error al enviar el mensaje");
+	       window.history.go(-1);
+          </script>';
 }else{
 		echo '<script>
-	alert("El mensaje se envio correctamente");
+	            alert("El mensaje se envio correctamente");
 	
-	window.location="../contact.php";
-     </script>';
+	            window.location="../contact.php";
+              </script>';
 }
 ?>
 <br><br>

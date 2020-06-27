@@ -13,9 +13,9 @@
 <head>
 	<title>Iniciar sesión</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="Style/style.css">
+	<link rel="stylesheet" href="css/style.css">
 	<!-- Fuente -->
-	<link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Patrick+Hand+SC&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<!-- Required meta tags -->   
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Bootstrap CSS -->
@@ -104,7 +104,7 @@
 	<script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>  
-	<script src="JavaScript/main.js"></script>
+	<script src="js/main.js"></script>
 		
 </body>
 </html>

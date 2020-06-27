@@ -58,6 +58,23 @@ mysqli_close($con);
                     <input type="number" name="precio" maxlength="5" id="precio" value ="<?php echo $rowDatosProd['precio'];?>">
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label><p class="text-center">Estado producto</p></label>
+                </div>
+                <div class="col-sm-6">   
+                    <?php if($rowDatosProd['habilitado']==0){ ?>
+                     <select name="estadoProducto" id="estadoProducto">
+                        <option value=1 <?php if($rowDatosProd['habilitado']==1){ echo "selected"; }?>>Habilitado</opction>
+                        <option value=0 <?php if($rowDatosProd['habilitado']==0){ echo "selected"; }?>>Deshabilitado</option>
+                     </select>   
+                    <?php } else { ?>
+                        <input type="text" disabled="true" name="descripcion" maxlength="20" id="estadoProducto" value ="<?php echo $rowDatosProd['habilitado']; ?>">
+                    <?php } ?>
+             </div>
+            </div>
+
             <?php if(isset($_GET['producto'])){ ?>
             <div class="container">
                 <div class="row">

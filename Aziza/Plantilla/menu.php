@@ -24,7 +24,7 @@
 					</li>
 					<li><a href="productos.php?idProducto=5">Pa&ntilde;uelos</a></li>
 					<li><a href="productos.php?idProducto=6">Mochilas</a></li>
-				</ul>			        
+				</ul>				        
 			</li>             
 			<li class="nav-item">
 			<a class="nav-link" href="about-us.php">Quienes Somos</a>
@@ -40,7 +40,7 @@
 			<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
 				Administrador
 			</a>
-				<ul class="dropdown-menu">
+				<ul class="dropdown-menu bg-dark">
 					<li><a href="cargaProducto.php">Cargar Producto</a></li>
 					<li><a href="eliminarProducto.php">Editar Producto</a></li>
 				</ul>			        

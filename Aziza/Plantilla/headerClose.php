@@ -2,13 +2,15 @@
     <div class="container">
         <div class="row">
         <div class="col-4 col-md-2">
-            <img src="Img/logo4.png" alt="logo" class="img-fluid">
+        <a href="home.php"><img src="Img/logo4.png" alt="logo" class="img-fluid"></a>
         </div>
-        <div class="col-5 col-md-9 my-auto float-left">
-        <h1>Aziza</h1>        	
+        <div class="col-5 col-md-8 my-auto float-left">
+        <!-- <h1>Aziza</h1>        	 -->
         </div>
-        <div class="col-3 col-md-1 my-auto">
-        <a href="php/cerrarSesion.php"><img src="Img/user_icon.png"><b class="d-none d-sm-none d-md-block">Cerrar Sesion</b></a>
+        <div class="col-3 col-md-2 my-auto">
+            <div class="center">
+            <a href="php/cerrarSesion.php"><img src="Img/user_icon.png"><b class="d-none d-sm-none d-md-block">Cerrar Sesion</b></a>
+            </div>            
         </div>
         </div>
     </div>  		

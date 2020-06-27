@@ -1,4 +1,3 @@
-
 <div class="container">
     <form method="POST" action="" onSubmit="return validarForm(this)">
     <div class="row">
@@ -27,7 +26,7 @@
             $con = mysqli_connect("localhost","root","","aziza");
             mysqli_set_charset($con,'utf8'); 
                         
-            if($_POST['buscar']) 
+            if(isset($_POST['buscar'])) 
             {   
 
         //obtenemos la información introducida anteriormente desde nuestro buscador PHP
@@ -36,6 +35,12 @@
             $sql = "SELECT * FROM productos p inner join tipoproductos tp on p.idTipo = tp.idTipo WHERE p.nproducto like '%$buscar%' or tp.descripcion like '%$buscar%'";
             $r = mysqli_query($con, $sql);
             mysqli_close($con);
+
+        } else {
+            $sql = "SELECT * FROM productos p inner join tipoproductos tp on p.idTipo = tp.idTipo";
+            $r = mysqli_query($con, $sql);
+            mysqli_close($con);            
+        }// fin if 
 
             while($row = mysqli_fetch_array ($r,MYSQLI_ASSOC)){
                 $idProducto = $row['idProducto'];
@@ -46,16 +51,19 @@
                     <td><div class="text-center"><?php $img = $row['img']; echo "<img width='50' border='0' src='data:image/jpg;base64,".$img."'>";?> </div></td>
                     <td class="text-center">$ <?php echo $row['precio'];?></td>
                     <td class="text-center"><a href="cargaProducto.php?producto=<?php echo $row['idProducto'];?>"><i class="fas fa-pen-square 3x"></i></a></td>
-                    <!--Eliminar--><td class="text-center"><a href="#" onClick="preguntar(<?php echo $row['idProducto'];?>)"><i class="fas fa-trash 2x"></i></a></td>
+                    <!--Eliminar--><td class="text-center"> 
+                        <?php if ($row['habilitado']==1){?>
+                          <a href="#" onClick="preguntar(<?php echo $row['idProducto'];?>)"><i class="fas fa-trash 2x"></i></a>
+                        <?php } ?>
+                        
+                    </td>
                 </tr>
-            <?php }?>
+            <?php } ?>
 
         </tbody>
     </table>
 </div>
-<?php
-} // fin if 
-?>
+
 
 <script>
 

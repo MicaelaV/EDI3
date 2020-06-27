@@ -20,4 +20,4 @@ echo "<img width='450' border='0' src='data:image/jpg;base64,".$img."'>";
 echo $nombreP.$precio;
 
 
-?> -->
+?> 
