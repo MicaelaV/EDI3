@@ -42,7 +42,7 @@
 
 </head>
 
-<body class="bodystyle">
+<body class="bodystyle" >
 
 	<?php include $sMenu ?>
 
@@ -118,6 +118,9 @@
         console.log(jqXHR.statusText);
     });
 
-}</script>			
+}</script>	
+
+
+
 </body>
 </html>

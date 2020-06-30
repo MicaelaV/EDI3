@@ -70,8 +70,8 @@
 					</div>				
 				</div>
 				 <!-- textoPresentacion -->
-					<div class="col-md-5 my-auto p-3">
-						<p>Venta mironista. Accesorios, aros, collares, mochilas, pañuelos, y una enorme variedad de productos, encontralos en Aziza. Calidad y precio. Envíos a todo Gran Buenos Aires. Av Belgrano 1191 (Avellaneda) </p>
+					<div class="col-md-5 my-auto p-3 presentacion">
+						<p>Venta mironista. Accesorios, aros, collares, mochilas, pañuelos, y una enorme variedad de productos, encontralos en Aziza. Calidad y precio. Envíos a todo Gran Buenos Aires.</p>
 					</div>							
 			</div>	
 		</div>

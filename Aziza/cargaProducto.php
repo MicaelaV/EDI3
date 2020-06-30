@@ -25,7 +25,7 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> 
 	</head>
 
-<body class="bodystyle">
+<body onload="cargarP()" class="bodystyle">
 
 	<?php include $sMenu ?>
 
@@ -46,6 +46,23 @@
 	<script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>  
-    <script src="js/main.js"></script> 		
+	<script src="js/main.js"></script>
+	 		
+    <script>
+		function cargarP(){	
+		var tipoProducto=document.getElementById('tipoProducto').value;
+		var descripcion=document.getElementById('descripcion').value;
+		var precio=document.getElementById('precio').value;
+		var estadoProducto=document.getElementById('estadoProducto').value;		
+		var fileToUpload=document.getElementById('fileToUpload').value;
+
+		if ((tipoProducto>0) &&(descripcion.length>2) && (precio>0) && (estadoProducto==1) && (fileToUpload.length>0) ){
+				document.getElementById('botonProductos').disabled = false;
+				//password();
+			}else{
+				document.getElementById('botonProductos').disabled = true;
+			}	 
+		}
+	</script>
 </body>
 </html>

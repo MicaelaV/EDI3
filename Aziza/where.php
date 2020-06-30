@@ -13,7 +13,7 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/style.css">
 		<!-- Fuente -->
-		<link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Patrick+Hand+SC&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 		<!-- Required meta tags -->   
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Bootstrap CSS -->
@@ -37,9 +37,9 @@
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.3921847278402!2d-58.36509968452513!3d-34.67005008044243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a333493cfe99d1%3A0x34462e140becf4b3!2sInstituto+Tecnol%C3%B3gico+Beltr%C3%A1n!5e0!3m2!1ses!2sar!4v1562197539610!5m2!1ses!2sar" width="600" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>						
 					</div>
 
-					<div class="col-md-5 my-auto">
-						<p class="text-center">Belgrano 1191 - Avellaneda</p>
-						<p class="text-center"><i class="far fa-clock fa-1x"></i>  9am a 6pm</p>
+					<div class="col-md-5 my-auto direccion">
+						<p>Belgrano 1191 - Avellaneda</p>
+						<p><i class="far fa-clock fa-1x"></i>  9am a 6pm</p>
 					</div>
 
 				</div>	

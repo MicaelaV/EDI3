@@ -10,7 +10,7 @@ if (isset($_REQUEST['mProducto'])) {
     $descripcion=$_REQUEST['descripcion'];
     $precio=$_REQUEST['precio'];
     $estadoProducto=$_REQUEST['estadoProducto'];
-    //var_dump($_POST); exit();
+    //var_dump($$); exit();
     
 // subo el archivo al temporal del server #
 $target_file = basename($_FILES["fileToUpload"]["name"]);
@@ -28,10 +28,11 @@ $con = mysqli_connect("localhost","root","","aziza");
 
 if (isset($mProducto)&& (is_numeric($mProducto))) {
     echo "UPDATEE";      
-    mysqli_query($con, "UPDATE productos set nproducto='$descripcion', idTipo = '$tipoProducto', precio = '$precio', habilitado = '$estadoProducto' WHERE idProducto='$mProducto' LIMIT 1"); //WHERE idProducto='$mProducto'"  
+    mysqli_query($con, "UPDATE productos set nproducto='$descripcion', idTipo = '$tipoProducto', precio = '$precio', habilitado ='$estadoProducto' WHERE idProducto='$mProducto' LIMIT 1"); //WHERE idProducto='$mProducto'"  
 }else{
     echo "INSERTT";
-    mysqli_query($con, "INSERT INTO productos (img,idTipo,nproducto,precio,habilitado)VALUES('$imagen_final', '$tipoProducto','$descripcion','$precio', '$estadoProducto');");
+
+    mysqli_query($con, "INSERT INTO productos (idTipo,nproducto,precio,habilitado,img)VALUES('$tipoProducto','$descripcion','$precio', '$estadoProducto', '$imagen_final');");
 }
 mysqli_close($con);
 

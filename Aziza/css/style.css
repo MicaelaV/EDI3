@@ -38,11 +38,11 @@
 }
 
 .titlePagFont {
-	font-family: 'Montserrat', sans-serif;
+	/* font-family: 'Montserrat', sans-serif; */
 }
 
 section,nav {
-	font-family: 'Montserrat', sans-serif;
+	/* font-family: 'Montserrat', sans-serif; */
 }
 
 #login {
@@ -69,6 +69,7 @@ footer div a i {
 
 .bodystyle {
   background-color: #fffcfa;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .center{
@@ -77,7 +78,7 @@ footer div a i {
 
 .bodystyle footer{
 	background-color:#e4b6d5;
-	font-family: 'Montserrat', sans-serif;	
+	/* font-family: 'Montserrat', sans-serif;	 */
 }
 
 .textoPresentacion{
@@ -142,4 +143,17 @@ footer ul li a{
 
 #flotante{
 	color: white;
+}
+
+.presentacion p, .direccion{
+  text-align: center;
+  font-weight: 500;
+}
+
+#palabra{
+  background: #fff;
+  border: 1px solid #000000;
+  font-weight: 600;
+  color: #000;
+  font-size: 18px;
 }

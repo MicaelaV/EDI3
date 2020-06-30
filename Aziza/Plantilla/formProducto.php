@@ -29,7 +29,8 @@ mysqli_close($con);
                     <label><p class="text-center">Tipos de Productos</p></label>
                 </div>
                 <div class="col-sm-6">
-                    <select name="tipoProducto" id="tipoProducto" >
+                    <select name="tipoProducto" id="tipoProducto" onchange="cargarP()">
+                        <option>Seleccione</option>
                         <?php
                         While($rowTipoProducto = mysqli_fetch_array($rTipoProducto,MYSQLI_ASSOC)){?>
                             <option value="<?php echo $rowTipoProducto['idTipo']; ?>"<?php 
@@ -47,7 +48,7 @@ mysqli_close($con);
                     <label><p class="text-center">Descripcion</p></label>
                 </div>
                 <div class="col-sm-6">
-                    <input type="text" name="descripcion" maxlength="20" id="descripcion" value ="<?php echo $rowDatosProd['nproducto']; ?>">
+                    <input type="text" name="descripcion" maxlength="20" id="descripcion" onkeyup="cargarP()"  value ="<?php echo $rowDatosProd['nproducto']; ?>">
                 </div>
             </div>
             <div class="row">
@@ -55,7 +56,7 @@ mysqli_close($con);
                     <label><p class="text-center">Precio</p></label>
                 </div>
                 <div class="col-sm-6">
-                    <input type="number" name="precio" maxlength="5" id="precio" value ="<?php echo $rowDatosProd['precio'];?>">
+                    <input type="number" name="precio" maxlength="5" id="precio" onkeyup="cargarP()" value ="<?php echo $rowDatosProd['precio'];?>">
                 </div>
             </div>
 
@@ -65,12 +66,12 @@ mysqli_close($con);
                 </div>
                 <div class="col-sm-6">   
                     <?php if($rowDatosProd['habilitado']==0){ ?>
-                     <select name="estadoProducto" id="estadoProducto">
-                        <option value=1 <?php if($rowDatosProd['habilitado']==1){ echo "selected"; }?>>Habilitado</opction>
-                        <option value=0 <?php if($rowDatosProd['habilitado']==0){ echo "selected"; }?>>Deshabilitado</option>
+                     <select  name="estadoProducto" id="estadoProducto" onchange="cargarP()">
+                        <option value=1  <?php if($rowDatosProd['habilitado']==1){ echo "selected"; }?>>Habilitado</opction>
+                        <option value=0 disabled="disabled" <?php if($rowDatosProd['habilitado']==0){ echo "selected"; }?>>Deshabilitado</option>
                      </select>   
                     <?php } else { ?>
-                        <input type="text" disabled="true" name="descripcion" maxlength="20" id="estadoProducto" value ="<?php echo $rowDatosProd['habilitado']; ?>">
+                        <input type="text" disabled="true" name="descripcion" maxlength="20" id="estadoProducto" value ="Habilitado">
                     <?php } ?>
              </div>
             </div>
@@ -94,13 +95,13 @@ mysqli_close($con);
                 <div class="col s6 offset-s3 borde">
                         <p class=" title center">Seleccione una imagen</p>
 
-                        <input type="file" name="fileToUpload" id="fileToUpload" value ="<?php echo $rowDatosProd['img'];?>">
+                        <input type="file" name="fileToUpload" id="fileToUpload" onchange="cargarP()" value ="<?php echo $rowDatosProd['img'];?>">
 
                 </div>
             </div>                                  
             <div class="row">
                 <div class="col-sm-10">
-                    <input type="submit" name="boton" value="Agregar" class="float-right" id="boton"> 
+                    <input type="submit" name="botonProductos" value="Agregar"  class="float-right" id="botonProductos"> 
                 </div>
             </div>							
         </form>	
