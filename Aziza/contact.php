@@ -36,43 +36,43 @@
 			<div class="container">
 				<div class="row">
 
-					<div class="col-md-6">  
+					<div class="col-md-12">  
 						<form action="email/send.php" method="POST">
-							<div class="row">
-								<div class="col-sm-6">
-									<label><p class="text-center">Nombre</p></label>
+							<div class="row justify-content-center">
+								<div class="col-sm-3">
+									<label><p class="text-center contactoTexto">Nombre</p></label>
 								</div>
-								<div class="col-sm-6">
-									<input type="text" id="nombre" name="nombre" maxlength="10" class="validate">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-6">
-									<label><p class="text-center">Telefono</p></label>
-								</div>
-								<div class="col-sm-6">
-									<input type="number" name="phone" class="validate">
+								<div class="col-sm-3">
+									<input type="text" id="nombre" name="nombre" maxlength="10" class="form-control validate">
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-sm-6">
-									<label><p class="text-center">E-mail</p></label>
+							<div class="row justify-content-center">
+								<div class="col-sm-3">
+									<label><p class="text-center contactoTexto">Telefono</p></label>
 								</div>
-								<div class="col-sm-6">
-									<input type="email" name="address" id="address" class="validate">
+								<div class="col-sm-3">
+									<input type="number" name="phone" class="form-control validate">
+								</div>
+							</div>
+							<div class="row justify-content-center">
+								<div class="col-sm-3">
+									<label><p class="text-center contactoTexto">E-mail</p></label>
+								</div>
+								<div class="col-sm-3">
+									<input type="email" name="address" id="address" class="form-control validate">
 								</div>
 							</div>							
-							<div class="row">
-								<div class="col-sm-6">
-									<label><p class="text-center">Consulta</p></label>
+							<div class="row justify-content-center">
+								<div class="col-sm-3">
+									<label><p class="text-center contactoTexto">Consulta</p></label>
 								</div>
-								<div class="col-sm-6">
-									<textarea id="message" name="message" cols="20" rows="5" class="full-width border-box m-none" maxlength="255" class="validate"></textarea>
+								<div class="col-sm-3">
+									<textarea id="message" name="message" cols="20" rows="5" class="form-control full-width border-box m-none" maxlength="255" class="validate"></textarea>
 								</div>
 							</div>							
 							<div class="row">
 								<div class="col-sm-10">
-									<input type="submit" name="action" value="Enviar" class="float-right"> 
+									<input type="submit" name="action" value="Enviar" class="float-right btn btn-dark"> 
 								</div>
 							</div>							
 						</form>	

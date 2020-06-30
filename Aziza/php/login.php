@@ -22,7 +22,7 @@ $row=mysqli_fetch_array($resultado);
     session_start();
     $_SESSION['id'] = $row['id'];
     $_SESSION['idGrupo'] = $row['tipoUsuario'];
-   	header('location: ../home.php');
+   	header('location: ../index.php');
    //echo "Con resultado";
    }
 

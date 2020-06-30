@@ -21,9 +21,9 @@
         $_SESSION['id'] = $consulta['id'];
         echo '<script>
 	           alert("Se registró correctamente");
-	           window.location="../home.php";
+	           window.location="../index.php";
               </script>';
-	      //header('location:../home.php ');
+
 	}else {
 		echo '<script>
 	           alert("Ya se encuentra registrado");

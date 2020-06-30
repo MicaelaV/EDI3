@@ -2,10 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col-4 col-md-2">
-            <a href="home.php"><img src="Img/logo4.png" alt="logo" class="img-fluid"></a>
+            <a href="index.php"><img src="Img/logo4.png" alt="logo" class="img-fluid"></a>
             </div>
-            <div class="col-5 col-md-8 my-auto float-left">
-    <!--         <h1>Aziza</h1>    -->     	
+            <div class="col-5 col-md-8 my-auto float-left">    	
             </div>
             <div class="col-3 col-md-2 my-auto">
                 <div class="center">

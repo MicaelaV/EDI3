@@ -37,14 +37,6 @@
 {   border-right: 5px solid #ffaf46;
 }
 
-.titlePagFont {
-	/* font-family: 'Montserrat', sans-serif; */
-}
-
-section,nav {
-	/* font-family: 'Montserrat', sans-serif; */
-}
-
 #login {
 	size:20px;
 }
@@ -145,15 +137,26 @@ footer ul li a{
 	color: white;
 }
 
-.presentacion p, .direccion{
+.presentacion p, .direccion, .contactoTexto{
   text-align: center;
   font-weight: 500;
 }
 
-#palabra{
+.card-body p{
+  font-weight: 450;  
+}
+
+.contactoTexto, .contactoContenido{
+  margin: 10px;
+}
+#palabra, #contactoContenido{
   background: #fff;
   border: 1px solid #000000;
-  font-weight: 600;
+  font-weight: 500;
   color: #000;
   font-size: 18px;
+}
+
+#QuienesTitulos{
+  color: #bd00a9;
 }

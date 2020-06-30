@@ -42,13 +42,13 @@
 							<div class="card-header" role="tab" id="headingOne1">
 								<a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
 								aria-controls="collapseOne1">
-								<h5 class="mb-0"> Quienes Somos </h5>
+								<h5 class="mb-0" id="QuienesTitulos"> Quienes Somos </h5>
 								</a>
 							</div>						    
 							<div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
 								data-parent="#accordionEx">
 								<div class="card-body">
-								<p>Somos un grupo de amigas emprendedoras, que un 12 de Agosto de 2015, decidimos comenzar con seriedad nuestro (hasta ese momento), pequeño negocio. Hoy agradecemos a todas esas clientas que nos siguen eligiendo, y gracias a las ganas que nos dan de seguir adelante, y sus recomendaciones, pudimos abrir nuestro negocio. Esperamos que sigan disfrutando de nuestros productos mucho tiempo m&aacute;s</p>      
+								<p>Somos un grupo de amigas emprendedoras, que un 12 de Agosto de 2015, decidimos comenzar con seriedad nuestro (hasta ese momento), pequeño negocio. Hoy agradecemos a todas esas clientas que nos siguen eligiendo, y gracias a las ganas que nos dan de seguir adelante, y sus recomendaciones, pudimos abrir nuestro negocio. Esperamos que sigan disfrutando de nuestros productos mucho tiempo m&aacute;s.</p>      
 								</div>
 							</div>						    
 							</div>
@@ -58,14 +58,13 @@
 							<div class="card-header" role="tab" id="headingTwo2">
 								<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
 								aria-expanded="false" aria-controls="collapseTwo2">
-								<h5 class="mb-0">Nuestra Historia</h5>
+								<h5 class="mb-0" id="QuienesTitulos">Nuestra Historia</h5>
 								</a>
 							</div>						    
 							<div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
 								data-parent="#accordionEx">
 								<div class="card-body">
-									<p>Todo empezó, como suele ser, de boca en boca, nos recomendaban por tener precios accesibles, buena atenci&oacute;n y productos cancheros, que es por lo que seguimos manteniendo y respetando esa l&iacute;nea que nos diferencia del resto. No fue (y no es) f&aacute;cil, tuvimos muchos obst&aacute;culos hasta poder llegar a ser reconocidas como lo somos hoy por hoy. Luego se sortearlos, un 2 de Febrero de 2017 pudimos abrir nuestro actual negocio, para poder brindar una personalizada y mejor atenci&oacute;n. 
-								.</p>          
+									<p>Todo empezó, como suele ser, de boca en boca, nos recomendaban por tener precios accesibles, buena atenci&oacute;n y productos cancheros, que es por lo que seguimos manteniendo y respetando esa l&iacute;nea que nos diferencia del resto. No fue (y no es) f&aacute;cil, tuvimos muchos obst&aacute;culos hasta poder llegar a ser reconocidas como lo somos hoy por hoy. Luego se sortearlos, un 2 de Febrero de 2017 pudimos abrir nuestro actual negocio, para poder brindar una personalizada y mejor atenci&oacute;n.</p>          
 								</div>
 							</div>    
 							</div>
@@ -75,7 +74,7 @@
 							<div class="card-header" role="tab" id="headingThree2">
 								<a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
 								aria-expanded="false" aria-controls="collapseThree3">
-								<h5 class="mb-0">Nuestros Productos</h5>
+								<h5 class="mb-0" id="QuienesTitulos">Nuestros Productos</h5>
 								</a>
 							</div>						    
 							<div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3"

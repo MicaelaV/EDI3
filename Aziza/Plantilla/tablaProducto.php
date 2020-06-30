@@ -2,7 +2,7 @@
     <form method="POST" action="" onSubmit="return validarForm(this)">
         <div class="row">
             <div class="col-8"><input type="text" class="form-control float-left" id="palabra" name="palabra"></div>
-            <div class="col-4"><input type="submit" value="Buscar" name="buscar" class="float-left btn btn-outline-dark"></div>
+            <div class="col-4"><input type="submit" value="Buscar" name="buscar" class="float-left btn btn-dark"></div>
         </div>
     </form> 
 </div>

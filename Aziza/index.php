@@ -80,8 +80,7 @@
 <br>
 
 <div id="boton-tel">
-<!--api.whatsapp.com   target="_blank" para conectar con whatsapp web-->
-<a href="https://api.whatsapp.com/send?phone=5199999999" target="_blank"> <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt=""> </a>
+	<a href="https://api.whatsapp.com/send?phone=5199999999" target="_blank"> <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt=""> </a>
 </div>
 <br>
 <br>

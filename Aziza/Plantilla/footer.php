@@ -24,7 +24,7 @@
             </div>
 
     <div class="row">
-        <div class="col-7 col-sm-9 col-lg-10">
+        <div class="col-12 col-sm-10">
             <p> © 2019 / All Rights Reserved </p>
         </div>
         </div>	

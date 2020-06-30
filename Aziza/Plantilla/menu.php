@@ -6,7 +6,7 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 		<ul class="navbar-nav">
 			<li class="nav-item">
-			<a class="nav-link" href="home.php">Home</a>
+			<a class="nav-link" href="index.php">Home</a>
 			</li>
 			<li class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
@@ -42,7 +42,7 @@
 			</a>
 				<ul class="dropdown-menu bg-dark">
 					<li><a href="cargaProducto.php">Cargar Producto</a></li>
-					<li><a href="eliminarProducto.php">Editar Producto</a></li>
+					<li><a href="eliminarProducto.php">Lista de Productos</a></li>
 				</ul>			        
 			</li>	
 <?php }}?>  			       
