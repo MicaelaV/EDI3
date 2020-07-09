@@ -14,7 +14,7 @@ $row=mysqli_fetch_array($resultado);
    //echo "Sin resultado";
    	//echo "password mal";		
    	echo '<script>
-	alert("Contraseña incorrecta, reintentelo");
+	alert("Usuario o contraseña incorrecta, reintentelo");
 	window.location="../login.php";
      </script>';
   

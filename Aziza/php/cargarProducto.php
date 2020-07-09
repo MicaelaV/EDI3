@@ -27,10 +27,10 @@ $imagen_final = base64_encode($contenidoImagen);
 $con = mysqli_connect("localhost","root","","aziza");
 
 if (isset($mProducto)&& (is_numeric($mProducto))) {
-    echo "UPDATEE";      
+    // echo "UPDATE";      
     mysqli_query($con, "UPDATE productos set nproducto='$descripcion', idTipo = '$tipoProducto', precio = '$precio', habilitado ='$estadoProducto' WHERE idProducto='$mProducto' LIMIT 1"); //WHERE idProducto='$mProducto'"  
 }else{
-    echo "INSERTT";
+    // echo "INSERT";
 
     mysqli_query($con, "INSERT INTO productos (idTipo,nproducto,precio,habilitado,img)VALUES('$tipoProducto','$descripcion','$precio', '$estadoProducto', '$imagen_final');");
 }

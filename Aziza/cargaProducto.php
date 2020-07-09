@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Carga</title>
+		<title>formulario de Producto</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/style.css">
 		<!-- Fuente -->
@@ -54,11 +54,11 @@
 		var descripcion=document.getElementById('descripcion').value;
 		var precio=document.getElementById('precio').value;
 		var estadoProducto=document.getElementById('estadoProducto').value;		
-		var fileToUpload=document.getElementById('fileToUpload').value;
+		//var fileToUpload=document.getElementById('fileToUpload').value;
 
-		if ((tipoProducto>0) &&(descripcion.length>2) && (precio>0) && (estadoProducto==1) && (fileToUpload.length>0) ){
+		if ((tipoProducto>0) &&(descripcion.length>2) && (precio>0)  ){
 				document.getElementById('botonProductos').disabled = false;
-				//password();
+				// password();
 			}else{
 				document.getElementById('botonProductos').disabled = true;
 			}	 

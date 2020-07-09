@@ -21,6 +21,10 @@
 		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
 		<!--Libreria icons-->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> 
+	
+		<link rel="stylesheet" href="pluggins/sweetalert2.min.css"> 
+	
+ 
 	</head>
 
 <body class="bodystyle">
@@ -94,7 +98,9 @@
 	<script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>  
-	<script src="js/main.js"></script> 		
+	<script src="js/main.js"></script> 	
+	<script src="pluggins/sweetalert2.min.js"></script> 
+
 </body>
 </html>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">

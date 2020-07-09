@@ -1,9 +1,9 @@
 # EDI3
-Pagina Web. Html, PHP, JavaScript
+Pagina Web. Html, PHP, JavaScript.
 
 
 
 
 
-Evelyn Ibarra
-Micaela Viva
+Evelyn Ibarra.
+Micaela Viva.

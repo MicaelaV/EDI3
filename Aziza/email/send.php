@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../pluggins/sweetalert2.min.css"> 
 <?php
 //Habilitar en gmail el "Acceso de aplicaciones poco seguras"
 //	https://myaccount.google.com/lesssecureapps
@@ -66,18 +67,31 @@ $mail->AltBody = 'Este es un cuerpo de mensaje de texto sin formato';
 #$mail->addAttachment('images/phpmailer_mini.png');
 
 //send the message, check for errors
+$enviado=1;
 if(!$mail->send()){
-	echo '<script>
-	       alert("Ocurrio un error al enviar el mensaje");
-	       window.history.go(-1);
-          </script>';
+	$enviado=0;
+			
+	 echo '<script>
+	            alert("Error");
+	          window.location="../contact.php";
+         </script>';
 }else{
-		echo '<script>
-	            alert("El mensaje se envio correctamente");
+	$enviado=1;
+ // echo '<script>
+ //         // alert("El mensaje se envio correctamente");
 	
-	            window.location="../contact.php";
-              </script>';
+ //         //  window.location="../contact.php";
+ //         //      </script>';
 }
+
+
+
 ?>
+
+
+
 <br><br>
+
 <!-- <button onclick="location.href='index.php'">Regresar</button> -->
+<script src="../pluggins/sweetalert2.min.js"></script> 
+<a href="../contact.php?enviado=<?php echo $enviado ?></a>

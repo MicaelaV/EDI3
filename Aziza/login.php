@@ -25,7 +25,7 @@
 
 </head>
 
-<body onload="valida(); validaR()" class="bodystyle">
+<body onload="valida()" class="bodystyle">
 
 <?php include $sMenu ?>
 
@@ -52,40 +52,40 @@
 
 
 	<script>
-	function valida(){	
+	// function valida(){	
 			
-	 var email=document.getElementById('email').value;		
-	 var password=document.getElementById('password').value;
+	//  var email=document.getElementById('email').value;		
+	//  var password=document.getElementById('password').value;
 
-		if ((email.length>4) && (password.length>2)){
-			//password();
-			document.getElementById('boton').disabled =false;
+	// 	if ((email.length>4) && (password.length>2)){
+	// 		//password();
+	// 		document.getElementById('boton').disabled =false;
 			
-		}else{
-			document.getElementById('boton').disabled =true;
-		}
+	// 	}else{
+	// 		document.getElementById('boton').disabled =true;
+	// 	}
 
-	}
+	// }
 
-	function validaR(){	
-	 var nombre=document.getElementById('nameR').value;
-	 var apellido=document.getElementById('surnameR').value;
-	 var telefono=document.getElementById('telphoneR').value;
-	 var email=document.getElementById('emailR').value;		
-	 var password=document.getElementById('passwordR').value;
-	 var passwordC=document.getElementById('passwordRConfirm').value;
+	// function validaR(){	
+	//  var nombre=document.getElementById('nameR').value;
+	//  var apellido=document.getElementById('surnameR').value;
+	//  var telefono=document.getElementById('telphoneR').value;
+	//  var email=document.getElementById('emailR').value;		
+	//  var password=document.getElementById('passwordR').value;
+	//  var passwordC=document.getElementById('passwordRConfirm').value;
 
 
-	 if ((nombre.length>2) && (apellido.length>2) && (apellido.length>2) && (telefono.length>2) 
-	 						&& (email.length>2) && (password.length>2) && (passwordC.length>2)){
-			document.getElementById('botonR').disabled =false;
-			//password();
-		}else{
-				document.getElementById('botonR').disabled =true;
-		}	 
-	}
+	//  if ((nombre.length>2) && (apellido.length>2) && (apellido.length>2) && (telefono.length>2) 
+	//  						&& (email.length>2) && (password.length>2) && (passwordC.length>2)){
+	// 		document.getElementById('botonR').disabled =false;
+	// 		//password();
+	// 	}else{
+	// 			document.getElementById('botonR').disabled =true;
+	// 	}	 
+	// }
 
-		function password(){
+function password(){
 	 var password=document.getElementById('passwordR').value;
 	 var passwordC=document.getElementById('passwordRConfirm').value;
 	
@@ -105,6 +105,26 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>  
 	<script src="js/main.js"></script>
+	<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
 		
 </body>
 </html>

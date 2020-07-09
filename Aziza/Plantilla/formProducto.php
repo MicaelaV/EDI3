@@ -24,12 +24,12 @@ mysqli_close($con);
         <h3>Producto</h3> 
         <form action="php/cargarProducto.php" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="mProducto" id="mProducto" value="<?php echo $mProducto; ?>">   
-            <div class="row">
-                <div class="col-sm-6">
+            <div class="row justify-content-center">
+                <div class="col-sm-3">
                     <label><p class="text-center">Tipos de Productos</p></label>
                 </div>
-                <div class="col-sm-6">
-                    <select name="tipoProducto" id="tipoProducto" onchange="cargarP()">
+                <div class="col-6 col-sm-3">
+                    <select name="tipoProducto" id="tipoProducto" onchange="cargarP()" class="form-control">
                         <option>Seleccione</option>
                         <?php
                         While($rowTipoProducto = mysqli_fetch_array($rTipoProducto,MYSQLI_ASSOC)){?>
@@ -43,37 +43,50 @@ mysqli_close($con);
                  </select>
             </div>
             </div>
-            <div class="row">
-                <div class="col-sm-6">
+            <div class="row justify-content-center">
+                <div class="col-sm-3">
                     <label><p class="text-center">Descripcion</p></label>
                 </div>
-                <div class="col-sm-6">
-                    <input type="text" name="descripcion" maxlength="20" id="descripcion" onkeyup="cargarP()"  value ="<?php echo $rowDatosProd['nproducto']; ?>">
+                <div class="col-sm-3">
+                    <input type="text" name="descripcion" maxlength="20" id="descripcion" class="form-control" onkeyup="cargarP()"  value ="<?php echo $rowDatosProd['nproducto']; ?>">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-6">
+            <div class="row justify-content-center">
+                <div class="col-sm-3">
                     <label><p class="text-center">Precio</p></label>
                 </div>
-                <div class="col-sm-6">
-                    <input type="number" name="precio" maxlength="5" id="precio" onkeyup="cargarP()" value ="<?php echo $rowDatosProd['precio'];?>">
+                <div class="col-sm-3">
+                    <input type="number" name="precio" maxlength="5" id="precio" onkeyup="cargarP()" class="form-control" value ="<?php echo $rowDatosProd['precio'];?>">
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-6">
-                    <label><p class="text-center">Estado producto</p></label>
-                </div>
-                <div class="col-sm-6">   
-                    <?php if($rowDatosProd['habilitado']==0){ ?>
-                     <select  name="estadoProducto" id="estadoProducto" onchange="cargarP()">
-                        <option value=1  <?php if($rowDatosProd['habilitado']==1){ echo "selected"; }?>>Habilitado</opction>
-                        <option value=0 disabled="disabled" <?php if($rowDatosProd['habilitado']==0){ echo "selected"; }?>>Deshabilitado</option>
+            <div class="row justify-content-center">
+                <?php if($rowDatosProd['habilitado']==="0"){ ?>
+                    <div class="col-sm-3">
+                        <label><p class="text-center">Estado producto</p></label>
+                    </div>
+                    <div class="col-sm-3">        
+                        <input type="checkbox" name="estadoProducto" id="estadoProducto" value="1"> <label>Habilitado</label>                       
+                    </div>                        
+                <?php } else { ?>
+                    <div class="col-sm-3" style="display: none;">
+                        <input type="checkbox" name="estadoProducto" id="estadoProducto" value="1" checked> <label>Habilitado</label>
+                    </div>
+                <?php } ?>
+            </div>
+                <!-- <div class="col-sm-3">   
+                    <?php// if($rowDatosProd['habilitado']==0){ ?>
+                     <select  name="estadoProducto" id="estadoProducto" class="form-control" onchange="cargarP()">
+                        <option value=1>Habilitado</opction>
+                        <option value=0>Deshabilitado</option>
                      </select>   
-                    <?php } else { ?>
-                        <input type="text" disabled="true" name="descripcion" maxlength="20" id="estadoProducto" value ="Habilitado">
-                    <?php } ?>
-             </div>
+                    <?php// } else { ?>
+                        <select  name="estadoProducto" id="estadoProducto" class="form-control" onchange="cargarP()">
+                            <option value=1>Habilitado</opction>
+                        </select>
+                         <input type="text" disabled="true" name="descripcion" maxlength="20" id="estadoProducto" value ="Habilitado">
+                    <?php //} ?>
+                </div>-->
             </div>
 
             <?php if(isset($_GET['producto'])){ ?>
@@ -91,19 +104,23 @@ mysqli_close($con);
             </div>
             <?php }?>
             <br><br>
-            <div class="row">
-                <div class="col s6 offset-s3 borde">
-                        <p class=" title center">Seleccione una imagen</p>
-
-                        <input type="file" name="fileToUpload" id="fileToUpload" onchange="cargarP()" value ="<?php echo $rowDatosProd['img'];?>">
-
-                </div>
-            </div>                                  
+            <div class="row justify-content-center">
+                <p class="title center">Seleccione una imagen</p>
+            </div>
+            <div class="row justify-content-center">
+                <a class="btn-floating mt-0 float-left" >
+                 <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                 <input type="file" required name="fileToUpload" id="fileToUpload" value ="<?php echo $rowDatosProd['img'];?>">
+                </a>
+                
+            </div>                                 
             <div class="row">
                 <div class="col-sm-10">
-                    <input type="submit" name="botonProductos" value="Agregar"  class="float-right" id="botonProductos"> 
+                    <input type="submit" name="botonProductos" value="Aceptar"  class="float-right btn btn-dark" id="botonProductos"> 
                 </div>
-            </div>							
+            </div>	
+
+   
         </form>	
         </div>
     </div>
