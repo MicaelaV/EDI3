@@ -29,7 +29,7 @@
                 if(isset($_POST['buscar'])) 
                 {   
 
-            //obtenemos la información introducida anteriormente desde nuestro buscador PHP
+                //obtenemos la información introducida anteriormente desde el buscador PHP
                 $buscar = $_POST["palabra"];
 
                 $sql = "SELECT * FROM productos p inner join tipoproductos tp on p.idTipo = tp.idTipo WHERE p.nproducto like '%$buscar%' or tp.descripcion like '%$buscar%'";
@@ -51,23 +51,19 @@
                         <td><div class="text-center"><?php $img = $row['img']; echo "<img width='50' border='0' src='data:image/jpg;base64,".$img."'>";?> </div></td>
                         <td class="text-center">$ <?php echo $row['precio'];?></td>
                         <td class="text-center"><a href="cargaProducto.php?producto=<?php echo $row['idProducto'];?>"><i class="fas fa-pen-square 3x"></i></a></td>
-                        <!--Eliminar--><td class="text-center"> 
+                        <td class="text-center"> <!--Eliminar-->
                             <?php if ($row['habilitado']==1){?>
                             <a href="#" onClick="preguntar(<?php echo $row['idProducto'];?>)"><i class="fas fa-trash 2x"></i></a>
-                            <?php } ?>
-                            
+                            <?php } ?>                            
                         </td>
                     </tr>
                 <?php } ?>
-
             </tbody>
         </table>    
     </div>
 </div>
 
-
 <script>
-
     function validarForm(formulario) 
     {
         if(formulario.palabra.value.length==0) 
@@ -79,12 +75,9 @@
          return true; //Si ha llegado hasta aquí, es que todo es correcto 
      }   
 
-
     function preguntar(id){
         if(confirm('¿Estas Seguro de que deseas Eliminar?')){
             window.location.href = "php/eliminar.php?del="+id;
         }
     }
-
-
 </script>

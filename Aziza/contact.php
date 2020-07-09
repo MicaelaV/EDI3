@@ -39,16 +39,16 @@
 					 <form class="needs-validation" novalidate action="email/send.php" method="POST">
 					    <div class="row justify-content-center">
 						    <div class="col-md-4 mb-3">
-						      <label for="validationCustom01"> <p class="text-center contactoTexto">Nombre</p></label>
-						      <input type="text" class="form-control" id="nombreContacto"  minlength="2" required>
+						      <label for="validationCustom01" class="text-center contactoTexto">Nombre</label>
+						      <input type="text" class="form-control" id="nombreContacto"  minlength="4" required>
 						      <div class="invalid-feedback">
-						        Debe tener más de 2 caracteres
+						        Debe tener más de 4 caracteres
 						      </div>
 					       </div>
 					    </div>
 					    <div class="row justify-content-center">
 					      <div class="col-md-4 mb-3">
-						      <label for="validationTel">Telefono</label>
+						      <label for="validationTel" class="text-center contactoTexto">Telefono</label>
 						      <input type="number" class="form-control" id="telefono" minlength="888" required>
 						      <div class="invalid-feedback">
 						        Telefono invalido
@@ -57,7 +57,7 @@
 					     </div>
 					     <div class="row justify-content-center">
 						    <div class="col-md-4 mb-3">
-						      <label for="validationEmail">E-Mail</label>
+						      <label for="validationEmail" class="text-center contactoTexto">E-Mail</label>
 						      <!-- <div class="input-group"> -->
 						        <input type="email" class="form-control" id="mailContacto" aria-describedby="inputGroupPrepend" required>
 						        <div class="invalid-feedback">
@@ -68,7 +68,7 @@
 					     <!-- </div> --> 
 					      <div class="row justify-content-center">
 					        <div class="col-md-4 mb-3">
-					        	<label for="validationConsulta">Consulta</label>
+					        	<label for="validationConsulta" class="text-center contactoTexto">Consulta</label>
 					        	<textarea id="message" class="form-control" name="message" cols="20" rows="5" class="form-control full-width border-box m-none" maxlength="255" class="validate" required></textarea>
 							      <div class="invalid-feedback">
 							        Ingrese una consulta
@@ -76,7 +76,7 @@
 					        </div>
 					     </div> 
 					      <div class="row justify-content-center">
-					        <button class="btn btn-primary" type="submit" id="enviarEmail">Enviar</button>
+					        <button class="btn btn-dark" type="submit" id="enviarEmail">Enviar</button>
 					   </div> 
 					 </form>
 

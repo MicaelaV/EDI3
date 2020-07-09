@@ -10,20 +10,16 @@ $resultado = $conexion -> query($consulta);
 
 
 $row=mysqli_fetch_array($resultado);
- if(is_null($row)){
-   //echo "Sin resultado";
-   	//echo "password mal";		
-   	echo '<script>
-	alert("Usuario o contraseña incorrecta, reintentelo");
-	window.location="../login.php";
-     </script>';
+ if(is_null($row)){	
+    header("Location: ../login.php?error=noexistuser");
+    exit();	
   
    }else{ 
     session_start();
     $_SESSION['id'] = $row['id'];
     $_SESSION['idGrupo'] = $row['tipoUsuario'];
    	header('location: ../index.php');
-   //echo "Con resultado";
+    exit();	
    }
 
 $resultado -> close();
