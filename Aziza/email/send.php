@@ -40,10 +40,10 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "ibarraevee@gmail.com";
+$mail->Username = "@gmail.com";
 
 //Password to use for SMTP authentication
-$mail->Password = "polentaconsalsa";
+$mail->Password = ".";
 
 //Set who the message is to be sent from
 $mail->setFrom('savonen@itbeltran.com.ar', utf8_decode('Aziza'));
@@ -58,7 +58,7 @@ $mail->Subject = utf8_decode('Consulta Aziza');
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-$mail->MsgHTML(utf8_decode($_REQUEST['nombre']." te agradecemos por la consulta! Nos contactaremos a la brevedad"));
+$mail->MsgHTML(utf8_decode("Hola ".$_REQUEST['nombre']."! te agradecemos por la consulta! Nos contactaremos a la brevedad"));
 
 //Replace the plain text body with one created manually
 $mail->AltBody = 'Este es un cuerpo de mensaje de texto sin formato';
@@ -69,14 +69,11 @@ $mail->AltBody = 'Este es un cuerpo de mensaje de texto sin formato';
 //send the message, check for errors
 $enviado=1;
 if(!$mail->send()){
-	$enviado=0;
-			
-	 echo '<script>
-	            alert("Error");
-	          window.location="../contact.php";
-         </script>';
+	$enviado=0;	
+	header("Location: ../contact.php?error=notsend");
 }else{
 	$enviado=1;
+	header("Location: ../contact.php?send=successsend");
  // echo '<script>
  //         // alert("El mensaje se envio correctamente");
 	

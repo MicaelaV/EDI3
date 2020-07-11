@@ -1,9 +1,9 @@
-<!-- <?php
+<?php
 	include 'php/conexion.php';
 
 	$idProducto= $_SESSION['idProducto'];
- $con = mysqli_connect("localhost","root","","aziza");
-$sql = "select * from productos p INNER JOIN tipoproductos tp on tp.idTipo = p.idTipo where tp.idTipo='$idProducto'";
+ 	$con = mysqli_connect("localhost","root","","aziza");
+	$sql = "select * from productos p INNER JOIN tipoproductos tp on tp.idTipo = p.idTipo where tp.idTipo='$idProducto'";
 
 
 $r = mysqli_query($con, $sql);
