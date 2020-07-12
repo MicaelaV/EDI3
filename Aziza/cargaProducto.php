@@ -4,7 +4,7 @@
     $idGrupo = $_SESSION['idGrupo'];
 	if(isset($_SESSION['id'])&&($idGrupo == 1)){
 		//$idGrupo = $_SESSION['idGrupo'];
-		$sMenu = 'Plantilla/headerClose.php';
+		$sMenu = 'plantilla/headerClose.php';
 	}else{
         header('location: home.php');
     }
@@ -29,15 +29,15 @@
 
 	<?php include $sMenu ?>
 
-	<?php include 'Plantilla/menu.php'?>
-<br>
-<section>
-<?php include 'Plantilla/formProducto.php'?>
-</section>    
-<br>
-<br>
+	<?php include 'plantilla/menu.php'?>
+	<br>
+	<section>
+	<?php include 'plantilla/formProducto.php'?>
+	</section>    
+	<br>
+	<br>
 	<footer>
-		<?php include 'Plantilla/footer.php' ?>
+		<?php include 'plantilla/footer.php' ?>
 	</footer>
 
 
@@ -52,8 +52,7 @@
 		function cargarP(){	
 		var tipoProducto=document.getElementById('tipoProducto').value;
 		var descripcion=document.getElementById('descripcion').value;
-		var precio=document.getElementById('precio').value;
-		var estadoProducto=document.getElementById('estadoProducto').value;		
+		var precio=document.getElementById('precio').value;	
 		//var fileToUpload=document.getElementById('fileToUpload').value;
 
 		if ((tipoProducto>0) &&(descripcion.length>2) && (precio>0)  ){

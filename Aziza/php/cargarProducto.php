@@ -28,16 +28,22 @@ $con = mysqli_connect("localhost","root","","aziza");
 
 if (isset($mProducto)&& (is_numeric($mProducto))) {
     // echo "UPDATE";      
-    mysqli_query($con, "UPDATE productos set nproducto='$descripcion', idTipo = '$tipoProducto', precio = '$precio', habilitado ='$estadoProducto' WHERE idProducto='$mProducto' LIMIT 1"); //WHERE idProducto='$mProducto'"  
+    mysqli_query($con, "UPDATE productos set nproducto='$descripcion', idTipo = '$tipoProducto', precio = '$precio', habilitado ='$estadoProducto' WHERE idProducto='$mProducto'  LIMIT 1"); 
 }else{
     // echo "INSERT";
-
+      $q = mysqli_query($con,"SELECT nproducto FROM productos WHERE nproducto = '$descripcion';");
+ //verificamos si el user exite con un condicional
+   if( mysqli_num_rows($q) == 0){
     mysqli_query($con, "INSERT INTO productos (idTipo,nproducto,precio,habilitado,img)VALUES('$tipoProducto','$descripcion','$precio', '$estadoProducto', '$imagen_final');");
+    header('location: ../eliminarProducto.php');
+   } else{
+    header("Location: ../cargaProducto.php?errorProducto=productoexiste");
+   }
 }
 mysqli_close($con);
 
 
 // elimino archivo del tmp #
 unlink($target_file);
-header('location: ../eliminarProducto.php');
+
 ?>

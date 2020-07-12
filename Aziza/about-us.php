@@ -1,9 +1,9 @@
 <?php
 	session_start();
-	$sMenu = 'Plantilla/headerLogin.php';
+	$sMenu = 'plantilla/headerLogin.php';
 	if(isset($_SESSION['id'])){
 		$idGrupo = $_SESSION['idGrupo'];
-		$sMenu = 'Plantilla/headerClose.php';
+		$sMenu = 'plantilla/headerClose.php';
 	}
 ?>
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
 
 	<?php include $sMenu ?>
 
-	<?php include 'Plantilla/menu.php'?>	
+	<?php include 'plantilla/menu.php'?>	
 
 <br>		
 
@@ -88,7 +88,7 @@
 						</div>						
 				</div>
 				<div class="col-md-5 col-lg-4">
-					<img src="Img/quienesSomos.jpeg" alt="collar-dos" class="d-none d-sm-none d-md-block img-fluid">
+					<img src="img/quienesSomos.jpeg" alt="collar-dos" class="d-none d-sm-none d-md-block img-fluid">
 				</div>	
 			</div>
 		</div>			
@@ -97,7 +97,7 @@
 <br>
 
 		<footer>
-		<?php include 'Plantilla/footer.php' ?>
+		<?php include 'plantilla/footer.php' ?>
 		</footer>
 
 	<!-- Optional JavaScript -->

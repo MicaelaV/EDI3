@@ -3,7 +3,7 @@
     $idGrupo = $_SESSION['idGrupo'];
 	if(isset($_SESSION['id'])&&($idGrupo == 1)){
 		//$idGrupo = $_SESSION['idGrupo'];
-		$sMenu = 'Plantilla/headerClose.php';
+		$sMenu = 'plantilla/headerClose.php';
 	}else{
         header('location: home.php');
     }
@@ -42,13 +42,13 @@
 
 	<?php include $sMenu ?>
 
-	<?php include 'Plantilla/menu.php'?>
+	<?php include 'plantilla/menu.php'?>
 <br>
-    <?php include 'Plantilla/tablaProducto.php'?>
+    <?php include 'plantilla/tablaProducto.php'?>
 <br>
 <br>
 	<footer>
-		<?php include 'Plantilla/footer.php' ?>
+		<?php include 'plantilla/footer.php' ?>
 	</footer>
 
 

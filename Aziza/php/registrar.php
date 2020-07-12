@@ -18,21 +18,15 @@
         mysqli_query($con, "insert into usuarios (nombre, apellido, email, password,telefono,tipoUsuario) 
                             values ('$nombre','$apellido','$email',md5('$password'),'$tel',2)");
         session_start();
-        $_SESSION['id'] = $consulta['id'];
-        echo '<script>
-	           alert("Se registró correctamente");
-	           window.location="../index.php";
-              </script>';
+	     $_SESSION['id'] = $sql['id'];
+	    $_SESSION['idGrupo'] = $sql['tipoUsuario'];
+	   	header("location: ../index.php?registro=exito");
+	    exit();	
 
 	}else {
-		echo '<script>
-	           alert("Ya se encuentra registrado");
-	           window.history.go(-1);
-             </script>';
+		header("Location: ../login.php?error=userexiste");
 	}
 
 	mysqli_close($con);
 
-
-	
 ?>

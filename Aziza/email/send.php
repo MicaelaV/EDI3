@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="../pluggins/sweetalert2.min.css"> 
 <?php
 //Habilitar en gmail el "Acceso de aplicaciones poco seguras"
 //	https://myaccount.google.com/lesssecureapps
@@ -40,13 +39,13 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "@gmail.com";
+$mail->Username = "azizabijouterie@gmail.com";
 
 //Password to use for SMTP authentication
-$mail->Password = ".";
+$mail->Password = "atrefuiio.15547";
 
 //Set who the message is to be sent from
-$mail->setFrom('savonen@itbeltran.com.ar', utf8_decode('Aziza'));
+$mail->setFrom('azizabijouterie@gmail.com', utf8_decode('Aziza'));
 
 //Set an alternative reply-to address
 #$mail->addReplyTo('replyto@example.com', 'First Last');
@@ -74,21 +73,6 @@ if(!$mail->send()){
 }else{
 	$enviado=1;
 	header("Location: ../contact.php?send=successsend");
- // echo '<script>
- //         // alert("El mensaje se envio correctamente");
-	
- //         //  window.location="../contact.php";
- //         //      </script>';
+
 }
-
-
-
 ?>
-
-
-
-<br><br>
-
-<!-- <button onclick="location.href='index.php'">Regresar</button> -->
-<script src="../pluggins/sweetalert2.min.js"></script> 
-<a href="../contact.php?enviado=<?php echo $enviado ?></a>

@@ -22,6 +22,13 @@ mysqli_close($con);
 <div class="container">
         <div class="col-md-12 text-center"> 
         <h3>Producto</h3> 
+                            <div class="row justify-content-center">
+                        <?php if (isset($_GET['errorProducto'])) {
+                                if ($_GET['errorProducto'] == "productoexiste") {
+                                    echo '<p class="error"> Error. Ya hay un producto registrado con ese nombre</p>';
+                                }
+                         } ?>      
+                    </div>  
         <form action="php/cargarProducto.php" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="mProducto" id="mProducto" value="<?php echo $mProducto; ?>">   
             <div class="row justify-content-center">
@@ -50,7 +57,7 @@ mysqli_close($con);
                 <div class="col-sm-3">
                     <input type="text" name="descripcion" maxlength="20" id="descripcion" class="form-control" onkeyup="cargarP()"  value ="<?php echo $rowDatosProd['nproducto']; ?>">
                 </div>
-            </div>
+            </div>      
             <div class="row justify-content-center">
                 <div class="col-sm-3">
                     <label><p class="text-center">Precio</p></label>
@@ -102,18 +109,29 @@ mysqli_close($con);
                     </div>
                 </div>
             </div>
-            <?php }?>
-            <br><br>
-            <div class="row justify-content-center">
-                <p class="title center">Seleccione una imagen</p>
-            </div>
-            <div class="row justify-content-center">
-                <a class="btn-floating mt-0 float-left" >
+             <br><br>
+                <div class="row justify-content-center">
+                    <p class="title center">Seleccione para editar la imagen</p>
+                </div>
+                <div class="row justify-content-center">
+                 <a class="btn-floating mt-0 float-left" >
                  <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-                 <input type="file" required name="fileToUpload" id="fileToUpload" value ="<?php echo $rowDatosProd['img'];?>">
+                 <input type="file" name="fileToUpload" id="fileToUpload" value ="<?php echo $rowDatosProd['img'];?>">
                 </a>
-                
-            </div>                                 
+
+            <?php }else {?>
+
+                <br><br>
+                <div class="row justify-content-center">
+                    <p class="title center">Seleccione una imagen</p>
+                </div>
+                <div class="row justify-content-center">
+                    <a class="btn-floating mt-0 float-left" >
+                     <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                     <input type="file" required name="fileToUpload" id="fileToUpload" value ="<?php echo $rowDatosProd['img'];?>">
+                    </a>
+             <?php } ?>    
+                </div>                                 
             <div class="row">
                 <div class="col-sm-10">
                     <input type="submit" name="botonProductos" value="Aceptar"  class="float-right btn btn-dark" id="botonProductos"> 

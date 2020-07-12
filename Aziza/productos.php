@@ -1,10 +1,10 @@
 <?php
 	//session_start();
 	session_start();
-	$sMenu = 'Plantilla/headerLogin.php';
+	$sMenu = 'plantilla/headerLogin.php';
 	if(isset($_SESSION['id'])){
 		$idGrupo = $_SESSION['idGrupo'];
-		$sMenu = 'Plantilla/headerClose.php';
+		$sMenu = 'plantilla/headerClose.php';
 	}
 
   if (isset($_GET['idProducto'])) {
@@ -46,7 +46,7 @@
 
 	<?php include $sMenu ?>
 
-<?php include 'Plantilla/menu.php'?>				
+<?php include 'plantilla/menu.php'?>				
 
 <br>
 
@@ -87,7 +87,7 @@
 			<br>
 			<br>
 		<footer>
- 		<?php include 'Plantilla/footer.php' ?>
+ 		<?php include 'plantilla/footer.php' ?>
 		</footer>
 
 	  <!-- Optional JavaScript -->

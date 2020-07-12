@@ -1,14 +1,16 @@
 <div class="col-md-6">
-    <?php if (isset($_GET['error'])) {
-            if ($_GET['error'] == "noexistuser") {
-                echo '<p class="error"> Usuario o contraseña incorrecta. Reintentelo</p>';
-            }
-     } ?>              
+    <div class="row justify-content-center">
+        <?php if (isset($_GET['error'])) {
+                if ($_GET['error'] == "noexistuser") {
+                    echo '<p class="error"> Usuario o contraseña incorrecta. Reintentelo</p>';
+                }
+         } ?>      
+    </div>          
     <h3>Ingresar</h3> 
     <form class="needs-validation" novalidate action="php/login.php" method="POST">
         <div class="row justify-content-center">
             <div class="col-sm-6">
-                <label for="validationMail" class="text-center contactoTexto">E-Mail:</label>
+                <label for="validationMail" class="text-center contactoTexto">E-Mail</label>
             </div>
             <div class="col-sm-6">
                 <input type="email" class="form-control" name="email" id="email"  required>
@@ -30,6 +32,9 @@
                 <input type="submit" name="boton" value="Ingresar" class="float-right btn btn-dark" id="boton"> 
             </div>
         </div>							
-    </form>	
+    </form>
+    <row class="row justify-content-center">
+     <a href="recuperarpwd.php">¿Olvidaste tu contrase&ntilde;a?</a>
+    </row>      	
 </div>
 

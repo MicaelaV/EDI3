@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
         <div class="col-4 col-md-2">
-        <a href="index.php"><img src="Img/logo4.png" alt="logo" class="img-fluid"></a>
+        <a href="index.php"><img src="img/logo4.png" alt="logo" class="img-fluid"></a>
         </div>
         <div class="col-5 col-md-8 my-auto float-left">
         </div>

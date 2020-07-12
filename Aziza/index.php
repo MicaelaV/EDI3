@@ -1,9 +1,9 @@
 <?php
 	session_start();
-	$sMenu = 'Plantilla/headerLogin.php';
+	$sMenu = 'plantilla/headerLogin.php';
 	if(isset($_SESSION['id'])){
 		$idGrupo = $_SESSION['idGrupo'];
-		$sMenu = 'Plantilla/headerClose.php';
+		$sMenu = 'plantilla/headerClose.php';
 	}
 ?>
 <!DOCTYPE html>
@@ -35,15 +35,21 @@
 	<?php include $sMenu ?>
 		
 	<!-- https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
-	<?php include 'Plantilla/menu.php'?>
+	<?php include 'plantilla/menu.php'?>
 
 <br>
 
 	<section>
 		<div class="container">
+			 <div class="row justify-content-center">
+        <?php if (isset($_GET['registro'])) {
+                if ($_GET['registro'] == "exito") {
+                    echo '<p class="success"> ¡BIENVENIDO! Se registró correctamente.</p>';
+                }
+         } ?>      
+    </div>        
 			<div class="row">
 				<div class="col-md-7" id="main-wrap">
-					<!-- <img src="Img/img-ej.jpeg" alt="img-ej" class="rounded img-fluid" > https://www.pexels.com/es-es/buscar/collar/ -->
 					<div id="demo" class="carousel slide" data-ride="carousel">
 						<!-- Indicators -->
 						<ul class="carousel-indicators">
@@ -56,19 +62,19 @@
 						<!-- Contenido de Slides -->
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="Img/necklace.jpeg" alt="img-ej" class="rounded img-fluid" >
+								<img src="img/necklace.jpeg" alt="img-ej" class="rounded img-fluid" >
 							</div>
 							<div class="carousel-item">
-								<img src="Img/flowers.jpg" alt="flowers" class="rounded img-fluid" >
+								<img src="img/flowers.jpg" alt="flowers" class="rounded img-fluid" >
 							</div>
 							<div class="carousel-item">
-								<img src="Img/wedding.jpg" alt="img-ej" class="rounded img-fluid" >
+								<img src="img/wedding.jpg" alt="img-ej" class="rounded img-fluid" >
 							</div>
 							<div class="carousel-item">
-								<img src="Img/table.jpg" alt="table" class="rounded img-fluid" >
+								<img src="img/table.jpg" alt="table" class="rounded img-fluid" >
 							</div>
 							<div class="carousel-item">
-								<img src="Img/black.jpg" alt="black" class="rounded img-fluid" >
+								<img src="img/black.jpg" alt="black" class="rounded img-fluid" >
 							</div>																							
 						</div>
 					</div>				
@@ -89,7 +95,7 @@
 <br>
 <br>
 		<footer>
-		<?php include 'Plantilla/footer.php' ?>
+		<?php include 'plantilla/footer.php' ?>
 		</footer>
 
 

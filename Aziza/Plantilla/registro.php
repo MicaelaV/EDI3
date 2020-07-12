@@ -1,4 +1,11 @@
 <div class="col-md-6">
+		<div class="row justify-content-center">
+			<?php if (isset($_GET['error'])) {
+		            if ($_GET['error'] == "userexiste") {
+		                echo '<p class="error"> Error. Usuario ya registrado</p>';
+		            }
+		     } ?>
+     </div>         
 	<h3>Registrarse</h3> 
 		<section>
 			<div class="container">
@@ -57,7 +64,7 @@
 								</div>	
 								<div class="col-sm-6">	
 									<input type="password" class="form-control" name="passwordR" id="passwordR" minlength="3" maxlength="10" onkeyup="password()" required>
-									<div class="invalid-feedback">Debes ingresar una contraseña</div>
+									<div class="invalid-feedback">La contraseña debe tener 3 o mas caracteres</div>
 									<br>
 								</div>	      
 							</div>

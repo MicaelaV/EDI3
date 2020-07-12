@@ -1,9 +1,9 @@
 <?php
 	session_start();
-	$sMenu = 'Plantilla/headerLogin.php';
+	$sMenu = 'plantilla/headerLogin.php';
 	if(isset($_SESSION['id'])){
 		$idGrupo = $_SESSION['idGrupo'];
-		$sMenu = 'Plantilla/headerClose.php';
+		$sMenu = 'plantilla/headerClose.php';
 	}
 ?>
 <!DOCTYPE html>
@@ -28,7 +28,7 @@
 
 	<?php include $sMenu ?>
 
-		<?php include 'Plantilla/menu.php'?>				
+		<?php include 'plantilla/menu.php'?>				
 
 <br>
 
@@ -36,18 +36,20 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-					<?php
-						if (isset($_GET['error'])) {
-							if ($_GET['error'] == "notsend") {
-								echo '<p class="error"> A sucedido un error, intente nuevamente</p>';
-							}				
-						}
-						if (isset($_GET['send'])) {
-							if ($_GET['send'] == "successsend") {
-								echo '<p class="success"> Consulta enviada!</p>';
-							}			
-						}											
-					?>
+						<div class="row justify-content-center">
+						<?php
+							if (isset($_GET['error'])) {
+								if ($_GET['error'] == "notsend") {
+									echo '<p class="error"> A sucedido un error, intente nuevamente</p>';
+								}				
+							}
+							if (isset($_GET['send'])) {
+								if ($_GET['send'] == "successsend") {
+									echo '<p class="success"> Consulta enviada!</p>';
+								}			
+							}											
+						?>
+						</div>
 					 <form class="needs-validation" novalidate action="email/send.php" method="POST">
 					    <div class="row justify-content-center">
 						    <div class="col-md-4 mb-3">
@@ -101,7 +103,7 @@
 <br>
 
 		<footer>
-		<?php include 'Plantilla/footer.php' ?>
+		<?php include 'plantilla/footer.php' ?>
 		</footer>
 
 	<!-- Optional JavaScript -->
