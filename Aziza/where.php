@@ -8,8 +8,8 @@
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Iniciar sesión</title>
+	<head>
+		<title>Iniciar sesión</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/style.css">
 		<!-- Fuente -->
@@ -21,14 +21,14 @@
 		<!--Libreria icons-->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> 	
 
-</head>
+	</head>
 
-<body class="bodystyle">
+	<body class="bodystyle">
 
-	<?php include $sMenu ?>
+		<?php include $sMenu ?>
 
 		<?php include 'plantilla/menu.php'?>
-<br>
+		<br>
 
 		<section>
 			<div class="container">
@@ -46,19 +46,18 @@
 			</div>
 		</section>
 
-<br>
+		<br>
 
-		<footer>
 		<?php include 'plantilla/footer.php' ?>
-		</footer>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="js/jquery-3.4.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>  
 
-	<script src="js/main.js"></script> 			
-</body>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>  
+
+		<script src="js/main.js"></script> 			
+	</body>
 </html>
 <!-- https://getbootstrap.com/docs/4.0/utilities/display/#hiding-elements -->

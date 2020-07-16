@@ -81,19 +81,7 @@ mysqli_close($con);
                     </div>
                 <?php } ?>
             </div>
-                <!-- <div class="col-sm-3">   
-                    <?php// if($rowDatosProd['habilitado']==0){ ?>
-                     <select  name="estadoProducto" id="estadoProducto" class="form-control" onchange="cargarP()">
-                        <option value=1>Habilitado</opction>
-                        <option value=0>Deshabilitado</option>
-                     </select>   
-                    <?php// } else { ?>
-                        <select  name="estadoProducto" id="estadoProducto" class="form-control" onchange="cargarP()">
-                            <option value=1>Habilitado</opction>
-                        </select>
-                         <input type="text" disabled="true" name="descripcion" maxlength="20" id="estadoProducto" value ="Habilitado">
-                    <?php //} ?>
-                </div>-->
+
             </div>
 
             <?php if(isset($_GET['producto'])){ ?>
@@ -117,6 +105,8 @@ mysqli_close($con);
                  <a class="btn-floating mt-0 float-left" >
                  <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
                  <input type="file" name="fileToUpload" id="fileToUpload" value ="<?php echo $rowDatosProd['img'];?>">
+                
+
                 </a>
 
             <?php }else {?>
@@ -128,7 +118,7 @@ mysqli_close($con);
                 <div class="row justify-content-center">
                     <a class="btn-floating mt-0 float-left" >
                      <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-                     <input type="file" required name="fileToUpload" id="fileToUpload" value ="<?php echo $rowDatosProd['img'];?>">
+                     <input type="file" name="fileToUpload" id="fileToUpload" value ="<?php echo $rowDatosProd['img'];?>" required >
                     </a>
              <?php } ?>    
                 </div>                                 

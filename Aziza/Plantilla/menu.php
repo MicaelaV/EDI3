@@ -35,17 +35,17 @@
 			<li class="nav-item">
 			<a class="nav-link" href="contact.php">Contacto</a>
 			</li>
-<?php if(isset($_SESSION['id'])){if($idGrupo == 1){?>
-	<li class="nav-item dropdown">
-			<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
-				Administrador
-			</a>
-				<ul class="dropdown-menu bg-dark">
-					<li><a href="cargaProducto.php">Cargar Producto</a></li>
-					<li><a href="eliminarProducto.php">Lista de Productos</a></li>
-				</ul>			        
-			</li>	
-<?php }}?>  			       
+	<?php if(isset($_SESSION['id'])){if($idGrupo == 1){?>
+		<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+					Administrador
+				</a>
+					<ul class="dropdown-menu bg-dark">
+						<li><a href="cargaProducto.php">Cargar Producto</a></li>
+						<li><a href="eliminarProducto.php">Lista de Productos</a></li>
+					</ul>			        
+				</li>	
+	<?php }}?>  			       
 		</ul>
 		</div>  
 	</nav>

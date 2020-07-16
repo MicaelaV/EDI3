@@ -8,7 +8,7 @@
             </div>
             <div class="col-3 col-md-2 my-auto">
                 <div class="center">
-                    <a href="login.php"><img src="Img/user_icon.png"><b class="d-none d-sm-none d-md-block">Ingresar</b></a> <!-- <i class="fas fa-user" id="login"></i> -->
+                    <a href="login.php"><img src="Img/user_icon.png"><b class="d-none d-sm-none d-md-block">Ingresar</b></a>
             
                 </div>
             </div>

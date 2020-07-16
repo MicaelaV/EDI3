@@ -1,16 +1,14 @@
 <?php
 if (isset($_REQUEST['mProducto'])) {
     $mProducto = $_REQUEST['mProducto']; 
-    echo "idProducto".$mProducto;
 }
 
-    //echo 'Valor MODIF: '.$mProducto;
   //REQUEST recupera todo
     $tipoProducto=$_REQUEST['tipoProducto'];
     $descripcion=$_REQUEST['descripcion'];
     $precio=$_REQUEST['precio'];
     $estadoProducto=$_REQUEST['estadoProducto'];
-    //var_dump($$); exit();
+    $validarimg=$_REQUEST['validarimg'];
     
 // subo el archivo al temporal del server #
 $target_file = basename($_FILES["fileToUpload"]["name"]);
@@ -27,11 +25,16 @@ $imagen_final = base64_encode($contenidoImagen);
 $con = mysqli_connect("localhost","root","","aziza");
 
 if (isset($mProducto)&& (is_numeric($mProducto))) {
-    // echo "UPDATE";      
-    mysqli_query($con, "UPDATE productos set nproducto='$descripcion', idTipo = '$tipoProducto', precio = '$precio', habilitado ='$estadoProducto' WHERE idProducto='$mProducto'  LIMIT 1"); 
+    // ver si tiene img cargada
+        if ($imagen_final==''){
+         mysqli_query($con, "UPDATE productos set nproducto='$descripcion', idTipo = '$tipoProducto', precio = '$precio', habilitado ='$estadoProducto' WHERE idProducto='$mProducto'  LIMIT 1"); 
+        }else{
+            mysqli_query($con, "UPDATE productos set nproducto='$descripcion', idTipo = '$tipoProducto', precio = '$precio', habilitado ='$estadoProducto', img = '$imagen_final' WHERE idProducto='$mProducto'  LIMIT 1"); 
+       }
+        
+     header('location: ../eliminarProducto.php');
 }else{
-    // echo "INSERT";
-      $q = mysqli_query($con,"SELECT nproducto FROM productos WHERE nproducto = '$descripcion';");
+    $q = mysqli_query($con,"SELECT nproducto FROM productos WHERE nproducto = '$descripcion';");
  //verificamos si el user exite con un condicional
    if( mysqli_num_rows($q) == 0){
     mysqli_query($con, "INSERT INTO productos (idTipo,nproducto,precio,habilitado,img)VALUES('$tipoProducto','$descripcion','$precio', '$estadoProducto', '$imagen_final');");
@@ -41,7 +44,6 @@ if (isset($mProducto)&& (is_numeric($mProducto))) {
    }
 }
 mysqli_close($con);
-
 
 // elimino archivo del tmp #
 unlink($target_file);

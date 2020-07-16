@@ -42,7 +42,7 @@ $mail->SMTPAuth = true;
 $mail->Username = "@gmail.com";
 
 //Password to use for SMTP authentication
-$mail->Password = "";
+$mail->Password = ".";
 
 //Set who the message is to be sent from
 $mail->setFrom('@gmail.com', utf8_decode('Aziza'));

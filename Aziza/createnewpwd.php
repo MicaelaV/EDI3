@@ -58,32 +58,32 @@
 											if (ctype_xdigit($valida)) {
 											//Chequear posibles caracteres que representen un dígito hexadecimal
 										?>	
-											<form class="needs-validation" novalidate action="php/submitpwd.php" method="POST">
-												<input type="text" name="valida" id="valida" value="<?php echo $valida ?>">
-											    <div class="row justify-content-center">
-								            <div class="col-md-4 mb-3">
-								                <label for="validatonPass" class="text-center contactoTexto">Contraseña</label>
-								            </div>
-										      </div>    
-										      <div class="row justify-content-center">
-								            <div class="col-md-4 mb-3">
-								                <input type="password" class="form-control" name="password" maxlength="10" id="password" required>
-								            </div>
-													</div>
-											    <div class="row justify-content-center">
-										            <div class="col-md-4 mb-3">
-										                <label for="validatonPass" class="text-center contactoTexto">Repetir Contraseña</label>
-										            </div>
-										        </div>    
-										        <div class="row justify-content-center">
-										            <div class="col-md-4 mb-3">
-										                <input type="password" class="form-control" name="passwordRepeat" maxlength="10" id="passwordRepeat"  required>
-										            </div>
-												</div>																						            
-											    <div class="row justify-content-center">
-											        <button class="btn btn-dark" type="submit" id="modPwdButton" name="modPwdButton">Aceptar</button>
-											    </div>      
-											</form>
+										<form class="needs-validation" novalidate action="php/submitpwd.php" method="POST">
+											<input type="hidden" name="valida" id="valida" value="<?php echo $valida ?>">
+										    <div class="row justify-content-center">
+									            <div class="col-md-4 mb-3">
+									                <label for="validatonPass" class="text-center contactoTexto">Contraseña</label>
+									            </div>
+									      	</div>    
+									      	<div class="row justify-content-center">
+							            		<div class="col-md-4 mb-3">
+							                		<input type="password" class="form-control" name="password" maxlength="10" id="password" required>
+							            		</div>
+											</div>
+										    <div class="row justify-content-center">
+									            <div class="col-md-4 mb-3">
+									                <label for="validatonPass" class="text-center contactoTexto">Repetir Contraseña</label>
+									            </div>
+									        </div>    
+									        <div class="row justify-content-center">
+									            <div class="col-md-4 mb-3">
+									                <input type="password" class="form-control" name="passwordRepeat" maxlength="10" id="passwordRepeat"  required>
+									            </div>
+											</div>																						            
+										    <div class="row justify-content-center">
+										        <button class="btn btn-dark" type="submit" id="modPwdButton" name="modPwdButton">Aceptar</button>
+										    </div>      
+										</form>
 									<?php }} ?>
 				        		</div>
 				    		</div>	
@@ -93,9 +93,9 @@
 			</div>
 		</div>
 		<br><br><br>
-		<footer>
-			<?php include 'Plantilla/footer.php' ?>
-		</footer>
+
+		<?php include 'Plantilla/footer.php' ?>
+
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->

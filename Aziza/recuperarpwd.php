@@ -48,6 +48,9 @@
 								if (isset($_GET['error'])) {
 									if ($_GET['error'] == "notsend") {
 										echo '<p class="error"> A sucedido un error, intente nuevamente</p>';
+									}
+									if ($_GET['error'] == "emailinexistente") {
+										echo '<p class="error"> Este correo no está registrado</p>';
 									}				
 								}
 								if (isset($_GET['send'])) {
@@ -79,9 +82,9 @@
 
 		<br><br><br>
 
-		<footer>
-			<?php include 'Plantilla/footer.php' ?>
-		</footer>
+
+		<?php include 'Plantilla/footer.php' ?>
+
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->

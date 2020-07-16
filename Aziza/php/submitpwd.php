@@ -4,7 +4,7 @@
 		$pwd = $_POST['password'];
 		$pwdRepeat = $_POST['passwordRepeat'];
 		$dateNow = date("U");
-		// $tokenBin = hex2bin($valida);
+
 		if ($pwd != $pwdRepeat) {
 			header("Location: ../createnewpwd.php?error=passwordcheck&valida=".$valida);
 			exit();

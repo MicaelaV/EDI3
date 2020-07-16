@@ -5,8 +5,7 @@
 $con = mysqli_connect("localhost","root","","aziza");
 
 mysqli_set_charset($con,'utf8');
-//echo "id".$IdProducto;
-//exit();
+
 $sql = "UPDATE productos SET habilitado=0 WHERE idProducto = $IdProducto";
 $r = mysqli_query($con, $sql);
 mysqli_close($con);
