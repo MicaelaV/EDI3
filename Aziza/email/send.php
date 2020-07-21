@@ -39,13 +39,13 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "1@gmail.com";
+$mail->Username = "azizabijouterie@gmail.com";
 
 //Password to use for SMTP authentication
-$mail->Password = "1.1";
+$mail->Password = "atrefuiio.15547";
 
 //Set who the message is to be sent from
-$mail->setFrom('1@gmail.com', utf8_decode('Aziza'));
+$mail->setFrom('azizabijouterie@gmail.com', utf8_decode('Aziza'));
 
 //Set an alternative reply-to address
 #$mail->addReplyTo('replyto@example.com', 'First Last');
