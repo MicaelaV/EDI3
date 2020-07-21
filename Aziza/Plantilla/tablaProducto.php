@@ -46,12 +46,13 @@
                     $idProducto = $row['idProducto'];
                     ?>
                     <tr>
-                        <td class="text-center"><?php echo $row['nproducto'];?></td> 
-                        <td class="text-center"><?php echo $row['descripcion'];?></td>
+                        <td class="text-center text-capitalize"><?php echo $row['nproducto'];?></td> 
+                        <td class="text-center text-capitalize"><?php echo $row['descripcion'];?></td>
                         <td><div class="text-center"><?php $img = $row['img']; echo "<img width='50' border='0' src='data:image/jpg;base64,".$img."'>";?> </div></td>
                         <td class="text-center">$ <?php echo $row['precio'];?></td>
                         <td class="text-center"><a href="cargaProducto.php?producto=<?php echo $row['idProducto'];?>"><i class="fas fa-pen-square 3x"></i></a></td>
-                        <td class="text-center"> <!--Eliminar-->
+                        <td class="text-center"> 
+                            <!--Eliminar-->
                             <?php if ($row['habilitado']==1){?>
                             <a href="#" onClick="preguntar(<?php echo $row['idProducto'];?>)"><i class="fas fa-trash 2x"></i></a>
                             <?php } ?>                            

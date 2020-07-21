@@ -1,5 +1,6 @@
 <?php
 	session_start();
+	$sMenu = 'plantilla/headerLogin.php';
 
 	if(isset($_SESSION['id'])){
 	$idGrupo = $_SESSION['idGrupo'];
@@ -11,7 +12,7 @@
 		
 		require 'php/conexion.php';
 
-		$sql = "select p.idProducto, p.nproducto, p.img, p.idTipo, p.precio, tp.descripcion from productos p INNER JOIN tipoproductos tp on tp.idTipo = p.idTipo where p.idTipo= $idTipo and habilitado=1";
+		$sql = "SELECT p.idProducto, p.nproducto, p.img, p.idTipo, p.precio, tp.descripcion FROM productos p INNER JOIN tipoproductos tp on tp.idTipo = p.idTipo WHERE p.idTipo= $idTipo AND habilitado=1";
 		
 		$result = mysqli_query($conexion, $sql);
 
@@ -31,7 +32,7 @@
 				}
 				else {
 					echo '<script>alert("Producto ya esta agregado al carrito")</script>';
-					echo '<script>window.location="productos.php?idTipo='.$idTipo.'"</script>';//Si uso hearder el alert desaparece
+					echo '<script>window.location="productos.php?idTipo='.$idTipo.'"</script>';
 				}
 			}
 			else {
@@ -55,6 +56,8 @@
 			}
 		}
 		mysqli_close($conexion);
+	} else {
+		header("Location: index.php");
 	}	
 ?>
 
@@ -77,7 +80,7 @@
 
 	<body class="bodystyle" >
 
-		<?php include 'plantilla/headerLogin.php' ?>
+		<?php include $sMenu ?>
 
 		<?php include 'plantilla/menu.php'?>				
 
@@ -91,6 +94,30 @@
 					</div>
 				</div>
 			</div>
+		<br>
+			<div class="container">
+				<div class="row">
+					<?php
+						if (mysqli_num_rows($result) > 0) {
+							while ($row = mysqli_fetch_array($result)) {
+					?>
+						<div class="col-md-3">
+							<form method="POST" action="productos.php?action=add&id=<?php echo $row['idProducto']?>&idTipo=<?php echo $idTipo ?>">
+								<div class="producto">
+									<div class="text-center"><?php $img = $row['img']; echo "<img width='200' border='0' src='data:image/jpg;base64,".$img."'>";?></div>
+									<h6 class="text-info text-center text-capitalize font-weight-bold"><?php echo $row['nproducto']; ?></h6>
+									<h6 class="text-danger text-center font-weight-bold">$ <?php echo $row['precio']; ?></h6>
+									<input type="number" name="quantity" class="form-control" value="1">
+									<input type="hidden" name="hidden_nombre" value="<?php echo $row['nproducto']; ?>">
+									<input type="hidden" name="hidden_price" value="<?php echo $row['precio']; ?>">
+									<input type="submit" name="add" style="margin-top: 5px;" class="btn btn-outline-danger btn-block" value="Agregar al Carro">
+								</div>							
+							</form>
+						</div>
+					<?php }} ?>					
+				</div>	
+			</div>
+
 			<div class="modal fade" id="Carrito">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content ventanaE">
@@ -119,22 +146,22 @@
 														$total = 0;
 														foreach ($_SESSION["cart"] as $key => $value) {
 												?>
-												<tr>
-													<td><?php echo $value["item_name"];?></td>
-													<td><?php echo $value["item_quantity"];?></td>
-													<td>$ <?php echo $value["product_price"];?></td>
-													<td>$ <?php echo number_format($value["item_quantity"] * $value["product_price"], 2); ?></td>
-													<td><a href="productos.php?action=delete&id=<?php echo $value['product_id'];?>&idTipo=<?php echo $idTipo ?>"><span class="text-danger">Quitar</span></a></td>
-												</tr>
-												<?php
-													$total = $total + ($value["item_quantity"] * $value["product_price"]);
-													}
-												?>
-												<tr>
-													<td colspan="3" align="right">Total</td>
-														<th align="right">$ <?php echo number_format($total,2); ?></th>
-													<td></td>
-												</tr>
+													<tr>
+														<td><?php echo $value["item_name"];?></td>
+														<td><?php echo $value["item_quantity"];?></td>
+														<td>$ <?php echo $value["product_price"];?></td>
+														<td>$ <?php echo number_format($value["item_quantity"] * $value["product_price"], 2); ?></td>
+														<td><a href="productos.php?action=delete&id=<?php echo $value['product_id'];?>&idTipo=<?php echo $idTipo ?>"><span class="text-danger">Quitar</span></a></td>
+													</tr>
+													<?php
+														$total = $total + ($value["item_quantity"] * $value["product_price"]);
+														}
+													?>
+													<tr>
+														<td colspan="3" align="right">Total</td>
+															<th align="right">$ <?php echo number_format($total,2); ?></th>
+														<td></td>
+													</tr>
 												<?php						
 												}
 												?>
@@ -148,9 +175,22 @@
 							<?php
 								if (!empty($_SESSION["cart"])) {
 									?>
-									<form method="POST" action="php/sendCompra.php">
-										<input type="submit" name="sendTotal" value="Comprar">
-									</form>
+
+										<div class="col-12">
+											<form method="POST" class="needs-validation" novalidate action="php/sendCompra.php">
+									            <div class="col-sm-6">
+									                <label for="validationMail" class="text-center contactoTexto">E-Mail</label>
+									            </div> <!-- que se inserte el mail si ya se logueo -->
+									            <div class="col-sm-6">
+									                <input type="email" class="form-control" name="email" id="email" placeholder="Ingrese Email" required>
+									                <div class="invalid-feedback">Correo invalido</div>
+									                <br>
+									            </div>
+												<br>
+												<input type="submit" name="sendTotal" value="Comprar" class="float-right btn btn-dark">
+											</form>											
+										</div>
+
 									<?php
 									//var_dump($_SESSION["cart"]);//como usar un array dentro de un session
 								}
@@ -158,29 +198,7 @@
 						</div>						
 					</div>					
 				</div>
-			</div>			
-			<div class="container">
-				<div class="row">
-					<?php
-						if (mysqli_num_rows($result) > 0) {
-							while ($row = mysqli_fetch_array($result)) {
-					?>
-						<div class="col-md-3">
-							<form method="POST" action="productos.php?action=add&id=<?php echo $row['idProducto']?>&idTipo=<?php echo $idTipo ?>">
-								<div class="producto">
-									<div class="text-center"><?php $img = $row['img']; echo "<img width='200' border='0' src='data:image/jpg;base64,".$img."'>";?></div>
-									<h6 class="text-info text-center"><?php echo $row['nproducto']; ?></h6>
-									<h6 class="text-danger text-center">$ <?php echo $row['precio']; ?></h6>
-									<input type="text" name="quantity" class="form-control" value="1">
-									<input type="hidden" name="hidden_nombre" value="<?php echo $row['nproducto']; ?>">
-									<input type="hidden" name="hidden_price" value="<?php echo $row['precio']; ?>">
-									<input type="submit" name="add" style="margin-top: 5px;" class="btn btn-outline-danger btn-block" value="Agregar al Carro">
-								</div>							
-							</form>
-						</div>
-					<?php }} ?>					
-				</div>	
-			</div>			
+			</div>							
 		</section>
 
 		<div class="container">
@@ -192,8 +210,8 @@
 
 	 	<?php include 'plantilla/footer.php' ?>
 
-		  <!-- Optional JavaScript -->
-		  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="js/jquery-3.4.1.min.js"></script>
 	    <script src="js/popper.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script> 	
@@ -216,6 +234,25 @@
 
 			}
 		</script>	
-
+		<script>
+			// Example starter JavaScript for disabling form submissions if there are invalid fields
+			(function() {
+			  'use strict';
+			  window.addEventListener('load', function() {
+			    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+			    var forms = document.getElementsByClassName('needs-validation');
+			    // Loop over them and prevent submission
+			    var validation = Array.prototype.filter.call(forms, function(form) {
+			      form.addEventListener('submit', function(event) {
+			        if (form.checkValidity() === false) {
+			          event.preventDefault();
+			          event.stopPropagation();
+			        }
+			        form.classList.add('was-validated');
+			      }, false);
+			    });
+			  }, false);
+			})();
+		</script>
 	</body>
 </html>
