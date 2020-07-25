@@ -8,18 +8,16 @@
         header('location: home.php');
     }
 
-    $con = mysqli_connect("localhost","root","","aziza");
-
-    mysqli_set_charset($con,'utf8');
+    include "php/conexion.php";
 
     $sqlI = "SELECT * FROM tipoproductos";
-    $rTipoProducto = mysqli_query($con, $sqlI);
+    $rTipoProducto = mysqli_query($conexion, $sqlI);
 
     $result= "SELECT * FROM productos";
-    $DatosPreven = mysqli_query($con, $result);
+    $DatosPreven = mysqli_query($conexion, $result);
     $rowDatosPreven = mysqli_fetch_array($DatosPreven,MYSQLI_ASSOC);
 
-    mysqli_close($con);
+    mysqli_close($conexion);
 ?>
 <!DOCTYPE html>
 <html lang="en">

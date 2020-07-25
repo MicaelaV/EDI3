@@ -2,7 +2,7 @@
 	session_start();
 	$sMenu = 'plantilla/headerLogin.php';
 	if(isset($_SESSION['id'])){
-	$idGrupo = $_SESSION['idGrupo'];
+		$idGrupo = $_SESSION['idGrupo'];
 	header('location: home.php');
 	}
 ?>

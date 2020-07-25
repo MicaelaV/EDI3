@@ -22,28 +22,28 @@ $contenidoImagen = file_get_contents($target_file);
 $imagen_final = base64_encode($contenidoImagen);
 
 
-$con = mysqli_connect("localhost","root","","aziza");
+include "conexion.php";
 
 if (isset($mProducto)&& (is_numeric($mProducto))) {
     // ver si tiene img cargada
         if ($imagen_final==''){
-         mysqli_query($con, "UPDATE productos set nproducto='$descripcion', idTipo = '$tipoProducto', precio = '$precio', habilitado ='$estadoProducto' WHERE idProducto='$mProducto'  LIMIT 1"); 
+         mysqli_query($conexion, "UPDATE productos set nproducto='$descripcion', idTipo = '$tipoProducto', precio = '$precio', habilitado ='$estadoProducto' WHERE idProducto='$mProducto'  LIMIT 1"); 
         }else{
-            mysqli_query($con, "UPDATE productos set nproducto='$descripcion', idTipo = '$tipoProducto', precio = '$precio', habilitado ='$estadoProducto', img = '$imagen_final' WHERE idProducto='$mProducto'  LIMIT 1"); 
+            mysqli_query($conexion, "UPDATE productos set nproducto='$descripcion', idTipo = '$tipoProducto', precio = '$precio', habilitado ='$estadoProducto', img = '$imagen_final' WHERE idProducto='$mProducto'  LIMIT 1"); 
        }
         
      header('location: ../eliminarProducto.php');
 }else{
-    $q = mysqli_query($con,"SELECT nproducto FROM productos WHERE nproducto = '$descripcion';");
+    $q = mysqli_query($conexion,"SELECT nproducto FROM productos WHERE nproducto = '$descripcion';");
  //verificamos si el user exite con un condicional
    if( mysqli_num_rows($q) == 0){
-    mysqli_query($con, "INSERT INTO productos (idTipo,nproducto,precio,habilitado,img)VALUES('$tipoProducto','$descripcion','$precio', '$estadoProducto', '$imagen_final');");
+    mysqli_query($conexion, "INSERT INTO productos (idTipo,nproducto,precio,habilitado,img)VALUES('$tipoProducto','$descripcion','$precio', '$estadoProducto', '$imagen_final');");
     header('location: ../eliminarProducto.php');
    } else{
     header("Location: ../cargaProducto.php?errorProducto=productoexiste");
    }
 }
-mysqli_close($con);
+mysqli_close($conexion);
 
 // elimino archivo del tmp #
 unlink($target_file);

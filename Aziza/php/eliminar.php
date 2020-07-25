@@ -2,13 +2,12 @@
   if (isset($_GET['del'])) {
     $IdProducto = $_GET['del'];
    }
-$con = mysqli_connect("localhost","root","","aziza");
+include "conexion.php";
 
-mysqli_set_charset($con,'utf8');
 
 $sql = "UPDATE productos SET habilitado=0 WHERE idProducto = $IdProducto";
-$r = mysqli_query($con, $sql);
-mysqli_close($con);
+$r = mysqli_query($conexion, $sql);
+mysqli_close($conexion);
 
 header('location: ../eliminarProducto.php');
 ?>

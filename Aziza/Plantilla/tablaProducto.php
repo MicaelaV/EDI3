@@ -18,13 +18,12 @@
                 <th class="text-center">Vista Previa</th> 
                 <th class="text-center">Precio</th> 
                 <th class="text-center">Modificar</th>
-                <th class="text-center">Eliminar</th>
+                <th class="text-center">Deshabilitar</th>
             </thead>
             <tbody>
             <?php
-                error_reporting(0);//Oculta Errores 
-                $con = mysqli_connect("localhost","root","","aziza");
-                mysqli_set_charset($con,'utf8'); 
+                //error_reporting(0);//Oculta Errores 
+                include "php/conexion.php";
                             
                 if(isset($_POST['buscar'])) 
                 {   
@@ -33,13 +32,13 @@
                 $buscar = $_POST["palabra"];
 
                 $sql = "SELECT * FROM productos p inner join tipoproductos tp on p.idTipo = tp.idTipo WHERE p.nproducto like '%$buscar%' or tp.descripcion like '%$buscar%'";
-                $r = mysqli_query($con, $sql);
-                mysqli_close($con);
+                $r = mysqli_query($conexion, $sql);
+                mysqli_close($conexion);
 
             } else {
                 $sql = "SELECT * FROM productos p inner join tipoproductos tp on p.idTipo = tp.idTipo";
-                $r = mysqli_query($con, $sql);
-                mysqli_close($con);            
+                $r = mysqli_query($conexion, $sql);
+                mysqli_close($conexion);            
             }// fin if 
 
                 while($row = mysqli_fetch_array ($r,MYSQLI_ASSOC)){

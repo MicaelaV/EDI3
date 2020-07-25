@@ -107,7 +107,7 @@
 									<div class="text-center"><?php $img = $row['img']; echo "<img width='200' border='0' src='data:image/jpg;base64,".$img."'>";?></div>
 									<h6 class="text-info text-center text-capitalize font-weight-bold"><?php echo $row['nproducto']; ?></h6>
 									<h6 class="text-danger text-center font-weight-bold">$ <?php echo $row['precio']; ?></h6>
-									<input type="number" name="quantity" class="form-control" value="1">
+									<input type="number" min="1" max="5" name="quantity" class="form-control" value="1">
 									<input type="hidden" name="hidden_nombre" value="<?php echo $row['nproducto']; ?>">
 									<input type="hidden" name="hidden_price" value="<?php echo $row['precio']; ?>">
 									<input type="submit" name="add" style="margin-top: 5px;" class="btn btn-outline-danger btn-block" value="Agregar al Carro">
@@ -182,12 +182,15 @@
 									                <label for="validationMail" class="text-center contactoTexto">E-Mail</label>
 									            </div> <!-- que se inserte el mail si ya se logueo -->
 									            <div class="col-sm-6">
-									                <input type="email" class="form-control" name="email" id="email" placeholder="Ingrese Email" required>
+									                <input type="email" class="form-control" name="email" id="email" placeholder="Ingrese Email"  required>
 									                <div class="invalid-feedback">Correo invalido</div>
 									                <br>
 									            </div>
 												<br>
 												<input type="submit" name="sendTotal" value="Comprar" class="float-right btn btn-dark">
+												<div class="col-sm-10">
+												<a href="productos.php?idTipo=<?php echo $idTipo ?>"><input type="button" name="sendTotal" value="Cancelar" class="float-right btn btn-dark" > </a>
+											    </div>
 											</form>											
 										</div>
 
@@ -216,6 +219,7 @@
 	    <script src="js/popper.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script> 	
 		<script src="js/main.js"></script> 
+
 		<script>
 			function show(){
 
@@ -254,5 +258,6 @@
 			  }, false);
 			})();
 		</script>
+
 	</body>
 </html>

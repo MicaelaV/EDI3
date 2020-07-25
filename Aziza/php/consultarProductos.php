@@ -2,13 +2,13 @@
 	include 'php/conexion.php';
 
 	$idProducto= $_SESSION['idProducto'];
- 	$con = mysqli_connect("localhost","root","","aziza");
+
 	$sql = "select * from productos p INNER JOIN tipoproductos tp on tp.idTipo = p.idTipo where tp.idTipo='$idProducto'";
 
 
-$r = mysqli_query($con, $sql);
+$r = mysqli_query($conexion, $sql);
 
-mysqli_close($con);
+mysqli_close($conexion);
 
 $row = mysqli_fetch_array ($r,MYSQLI_ASSOC);
 $nombreP=$row['descripcion'];

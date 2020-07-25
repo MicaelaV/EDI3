@@ -1,9 +1,10 @@
 # EDI3
-Pagina Web. Html, PHP, JavaScript.
+Pagina Web. Html, PHP, JavaScript. 
+Realizada para la materia EDI 3 en el 2019
 
 
 
 
-
-Evelyn Ibarra.
+Grupo de desarrollo:
+Evelyn Ibarra. 
 Micaela Viva.

@@ -4,6 +4,8 @@ if(isset($_GET['producto'])){
     $mProducto = $_GET['producto'];
     //echo "idP".$mProducto;
 }
+
+
 $con = mysqli_connect("localhost","root","","aziza");
 
 mysqli_set_charset($con,'utf8');
