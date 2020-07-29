@@ -1,16 +1,25 @@
 <?php
+	error_reporting(0);
 	session_start();
 	$sMenu = 'plantilla/headerLogin.php';
 
+	require 'php/conexion.php';
+
 	if(isset($_SESSION['id'])){
-	$idGrupo = $_SESSION['idGrupo'];
-	$sMenu = 'plantilla/headerClose.php';
+		$id = $_SESSION['id'];
+		$idGrupo = $_SESSION['idGrupo'];
+		$sMenu = 'plantilla/headerClose.php';
+		if ($idGrupo == 2) {
+			$sqlU = "select email from usuarios where id = '$id'";
+			$resultU = mysqli_query($conexion, $sqlU);
+			$rowUser = mysqli_fetch_array($resultU,MYSQLI_ASSOC);
+		}
 	}
 
 	if (isset($_GET['idTipo'])) {
 		$idTipo = $_GET['idTipo'];
 		
-		require 'php/conexion.php';
+		
 
 		$sql = "SELECT p.idProducto, p.nproducto, p.img, p.idTipo, p.precio, tp.descripcion FROM productos p INNER JOIN tipoproductos tp on tp.idTipo = p.idTipo WHERE p.idTipo= $idTipo AND habilitado=1";
 		
@@ -75,7 +84,8 @@
 		  <!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css">	
 		<!--Libreria icons-->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> 	
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> 
+		<link rel="stylesheet" href="pluggins/sweetalert2.min.css"> 	
 	</head>
 
 	<body class="bodystyle" >
@@ -89,7 +99,7 @@
 
 			<div class="container">
 				<div class="d-flex flex-row-reverse">
-					<div class="col-3">
+					<div class="col-md-3">
 						<a href="#Carrito" class="btn btn-outline-danger btn-block" data-toggle="modal"><i class="fas fa-cart-plus"></i> Carrito de Compra</a>						
 					</div>
 				</div>
@@ -177,21 +187,28 @@
 									?>
 
 										<div class="col-12">
-											<form method="POST" class="needs-validation" novalidate action="php/sendCompra.php">
+											<form name="tuformulario" method="POST" class="needs-validation"novalidate action="php/sendCompra.php" target="_blank">
 									            <div class="col-sm-6">
 									                <label for="validationMail" class="text-center contactoTexto">E-Mail</label>
 									            </div> <!-- que se inserte el mail si ya se logueo -->
-									            <div class="col-sm-6">
-									                <input type="email" class="form-control" name="email" id="email" placeholder="Ingrese Email"  required>
-									                <div class="invalid-feedback">Correo invalido</div>
+									            <div class="col-sm-6" >
+									            	<p class="text-success textoMail">"Te enviaremos los detalles de la compra al mail asentado"</p>
+									            	<?php if ($idGrupo == 2){ ?>
+									                	<input name="emailCompra" type="email" class="form-control"  id="emailCompra"  placeholder="Ingrese Email" value="<?php echo $rowUser['email'];?>">
+									                	<br>
+									                	</div>
+									                	<input type="button" name="sendTotal" id="sendTotal" value="Comprar" class="float-right btn btn-dark" class="btn btn-outline-secondary" onclick="pregunta()"  data-dismiss="modal"> 
+									                <?php }else { ?>
+									              
+									                <input name="emailCompra" type="email" class="form-control"  id="emailCompra"  placeholder="Ingrese Email" value="" onkeyup="validarEmail()" required>
+									                <br>
+									                <div id="confirmEmail"  ></div>
 									                <br>
 									            </div>
 												<br>
-												<input type="submit" name="sendTotal" value="Comprar" class="float-right btn btn-dark">
-												<div class="col-sm-10">
-												<a href="productos.php?idTipo=<?php echo $idTipo ?>"><input type="button" name="sendTotal" value="Cancelar" class="float-right btn btn-dark" > </a>
-											    </div>
-											</form>											
+												<input type="button" name="sendTotal" id="sendTotal" value="Comprar" class="float-right btn btn-dark" class="btn btn-outline-secondary" onclick="pregunta()" disabled="true" data-dismiss="modal"> 
+									                <?php } ?>
+									           </form>											
 										</div>
 
 									<?php
@@ -219,24 +236,63 @@
 	    <script src="js/popper.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script> 	
 		<script src="js/main.js"></script> 
-
+		<script src="pluggins/sweetalert2.min.js"></script>
 		<script>
-			function show(){
+			// function show(){
 
-		    $.ajax({
-		        url: 'consultarProductos.php',
-		        type: 'POST',
-		    })
+		 //    $.ajax({
+		 //        url: 'consultarProductos.php',
+		 //        type: 'POST',
+		 //    })
 
-		    .done(function(response){
-		        $("#result").html(response);
-		    })
+		 //    .done(function(response){
+		 //        $("#result").html(response);
+		 //    })
 
-		    .fail(function(jqXHR){
-		        console.log(jqXHR.statusText);
-		    });
+		 //    .fail(function(jqXHR){
+		 //        console.log(jqXHR.statusText);
+		 //    });
 
-			}
+			// }
+
+			function pregunta(){
+	   //        if (confirm("¿Estas seguro de quiere realizar esta compra?")){
+				// 	document.tuformulario.submit()
+				// }else{
+				// 	alert("Su compra ha sido cancelada");
+				// }
+				Swal.fire({
+				        title: "¿Deseas confirmar la compra?",
+				        icon: 'warning',
+				        showCancelButton: true,
+				        confirmButtonText: "Confirmar",
+				        cancelButtonText: "Cancelar",
+				    })
+				    .then(resultado => {
+				        if (resultado.value) {
+				            // Hicieron click en "Sí"
+				            document.tuformulario.submit()
+				        } 
+				    });
+				}
+
+			function validarEmail(){
+				 var emailCompra=document.getElementById('emailCompra').value;
+				 var sendTotal=document.getElementById('sendTotal').value;
+				 expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+               if ( !expr.test(emailCompra) ){
+               	        document.getElementById('sendTotal').disabled = true;
+					     document.getElementById('confirmEmail').innerHTML= " Verifique el correo ingresado";
+					     confirmEmail.style.color="red";
+					 }else{
+					 document.getElementById('confirmEmail').innerHTML= " Email valido";
+					 document.getElementById('sendTotal').disabled = false;
+					 confirmEmail.style.color="green";
+				   }	
+				}
+			
+		  
+		
 		</script>	
 		<script>
 			// Example starter JavaScript for disabling form submissions if there are invalid fields

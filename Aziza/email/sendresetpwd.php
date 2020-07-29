@@ -49,11 +49,11 @@
 
 			$mail->SMTPAuth = true;
 
-			$mail->Username = "azizabijouterie@gmail.com";
+			$mail->Username = "@.com";
 
-			$mail->Password = "atrefuiio.15547";
+			$mail->Password = ".";
 
-			$mail->setFrom('azizabijouterie@gmail.com', utf8_decode('Aziza'));
+			$mail->setFrom('@.com', utf8_decode('Aziza'));
 
 			$mail->addAddress($mailUser);
 

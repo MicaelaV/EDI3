@@ -7,9 +7,8 @@
 error_reporting(0);
 session_start();
 require '../pdf/fpdf/fpdf.php';
-$email=$_GET['email'];
+// $email=$_POST['email'];
 
-if (isset($_POST['sendTotal'])) {
 
             class PDF extends FPDF
 	        {
@@ -38,6 +37,10 @@ if (isset($_POST['sendTotal'])) {
 			// Pie de página
 			function Footer()
 			{
+
+			  $this->SetY(-50);
+			  $this->SetFont('Arial','B',14);
+			  $this->Cell(8,10,'IMPORTANTE:chequea tu correo, te enviamos los datos para confirmar la compra.',0,0,'L');
 
 			  $this->SetY(-35);
 			  $this->SetFont('Arial','B',15);
@@ -69,23 +72,16 @@ if (isset($_POST['sendTotal'])) {
 		   
 	    	    $totalCompra=$totalCompra+$total;	
 			 }
-				
+			//unset($_SESSION["cart"]);//borramos variable cart	
     
 			$pdf-> SetFont('Arial', 'B', 15);
 		  	$pdf->Cell(200,15,utf8_decode('TOTAL COMPRA: $'.$totalCompra),1,0,'C',0);
 		    $pdf->Ln(10);    
 
-			$pdf->OutPut();
-  		
+		    $pdf->OutPut();
+			$archivoPdf = $pdf->OutPut('','S');
+  		    
 
-}
-
-
- 
-
-
-
-
-
+			include "../email/sendEmailCompra.php";
 
 ?>

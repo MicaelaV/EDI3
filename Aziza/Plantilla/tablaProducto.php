@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="pluggins/sweetalert2.min.css"> 
 <div class="container">
     <form method="POST" action="" onSubmit="return validarForm(this)">
         <div class="row">
@@ -76,8 +77,23 @@
      }   
 
     function preguntar(id){
-        if(confirm('¿Estas Seguro de que deseas Eliminar?')){
-            window.location.href = "php/eliminar.php?del="+id;
-        }
-    }
+        // if(confirm('¿Estas Seguro de que deseas Eliminar?')){
+        //     window.location.href = "php/eliminar.php?del="+id;
+        // }
+                Swal.fire({
+                        title: "¿Estas Seguro de que deseas Eliminar?",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: "Confirmar",
+                        cancelButtonText: "Cancelar",
+                    })
+                    .then(resultado => {
+                        if (resultado.value) {
+                            // Hicieron click en "Sí"
+                            window.location.href = "php/eliminar.php?del="+id;
+                        } 
+                    });
+   }
+    
 </script>
+  <script src="pluggins/sweetalert2.min.js"></script>

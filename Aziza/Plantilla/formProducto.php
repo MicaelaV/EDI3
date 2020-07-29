@@ -2,7 +2,6 @@
 
 if(isset($_GET['producto'])){
     $mProducto = $_GET['producto'];
-    //echo "idP".$mProducto;
 }
 
 

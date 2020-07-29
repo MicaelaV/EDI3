@@ -3,6 +3,8 @@
 //	https://myaccount.google.com/lesssecureapps
 
 // seteo el timezone correcto
+
+
 date_default_timezone_set('America/Argentina/Buenos_Aires');
 
 //incluyo la libreria
@@ -50,29 +52,33 @@ $mail->setFrom('@.com', utf8_decode('Aziza'));
 //Set an alternative reply-to address
 #$mail->addReplyTo('replyto@example.com', 'First Last');
 //Set who the message is to be sent to
-$mail->addAddress($_REQUEST['address']);
+$mail->addAddress($_POST['emailCompra']);
 
 //Set the subject line
-$mail->Subject = utf8_decode('Consulta Aziza');
+$mail->Subject = utf8_decode('Gracias por compra en Aziza bijouterie');
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-$mail->MsgHTML(utf8_decode("Hola ".$_REQUEST['nombre']."! te agradecemos por la consulta! Nos contactaremos a la brevedad"));
+$mail->MsgHTML(utf8_decode("Estás recibiendo este mail porque comenzaste una compra en Aziza Bijouterie.
+	 Te enviaremos tu pedido, una vez que recibamos la confirmación del pago, para ello te dejamos nuestros datos bancarios
+	   CBU:
+	   Nombre Titular:
+	   Alias:
+	   Respondé este mail, una vez hecho el deposito.
+	   A continuación te dejamos el detalle de la compra para que puedas descargarlo:"));
 
 //Replace the plain text body with one created manually
 $mail->AltBody = 'Este es un cuerpo de mensaje de texto sin formato';
-
+$mail->AddStringAttachment($archivoPdf,'detalleOrdenAziza.pdf','base64');
 //Attach an image file 
 #$mail->addAttachment('images/phpmailer_mini.png');
 
 //send the message, check for errors
-$enviado=1;
-if(!$mail->send()){
-	$enviado=0;	
-	header("Location: ../contact.php?error=notsend");
-}else{
-	$enviado=1;
-	header("Location: ../contact.php?send=successsend");
 
-}
+if(!$mail->send()){
+	echo"no";
+}else{
+	echo "enviado";
+} 
+
 ?>

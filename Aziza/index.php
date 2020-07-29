@@ -37,7 +37,7 @@
 				            if ($_GET['registro'] == "exito") {
 				                echo '<p class="success"> ¡BIENVENIDO! Se registró correctamente.</p>';
 				            }
-				     } ?>      
+				     } ?>           
 	    		</div>        
 				<div class="row">
 					<div class="col-md-7" id="main-wrap">

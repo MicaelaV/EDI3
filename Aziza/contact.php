@@ -1,10 +1,19 @@
 <?php
+	error_reporting(0);
 	session_start();
 	$sMenu = 'plantilla/headerLogin.php';
+	require 'php/conexion.php';
 	if(isset($_SESSION['id'])){
 		$idGrupo = $_SESSION['idGrupo'];
+		$id = $_SESSION['id'];
 		$sMenu = 'plantilla/headerClose.php';
+		if (isset($idGrupo)) {
+			$sql = "select email, nombre, apellido, telefono from usuarios where id = '$id'";
+			$result = mysqli_query($conexion, $sql);
+			$rowUser = mysqli_fetch_array($result,MYSQLI_ASSOC);
+		}
 	}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,23 +61,24 @@
 						<form class="needs-validation" novalidate action="email/send.php" method="POST">
 						    <div class="row justify-content-center">
 							    <div class="col-md-4 mb-3">
-							      <label for="validationCustom01" class="text-center contactoTexto">Nombre</label>
-							      <input name="nombre" type="text" class="form-control" id="nombreContacto"  minlength="4" required>
-							      <div class="invalid-feedback">Debe tener más de 4 caracteres</div>
+							      	<label for="validationCustom01" class="text-center contactoTexto">Nombre</label>
+									<input name="nombre" type="text" class="form-control" id="nombreContacto"  minlength="4" value="<?php if ($idGrupo == 2){ echo $rowUser['nombre'];} ?>" required>
+
+							      	<div class="invalid-feedback">Debe tener más de 4 caracteres</div>
 						       </div>
 						    </div>
 						    <div class="row justify-content-center">
 						      <div class="col-md-4 mb-3">
-							      <label for="validationTel" class="text-center contactoTexto">Telefono</label>
-							      <input type="number" class="form-control" id="telefono" minlength="888" required>
-							      <div class="invalid-feedback">Telefono invalido</div>
+							      <label for="validationTel" class="text-center contactoTexto">Tel&eacute;fono</label>
+							      <input type="number" class="form-control" id="telefono" max="99999999999" min="10000000" value="<?php if ($idGrupo == 2){ echo $rowUser['telefono'];} ?>" required>
+							      <div class="invalid-feedback">Tel&eacute;fono invalido</div>
 							   </div>
 						    </div>
 						    <div class="row justify-content-center">
 							    <div class="col-md-4 mb-3">
 							      <label for="validationEmail" class="text-center contactoTexto">E-Mail</label>
 							      <!-- <div class="input-group"> -->
-							        <input name="address" type="email" class="form-control" id="mailContacto" aria-describedby="inputGroupPrepend" required>
+							        <input name="address" type="email" class="form-control" id="mailContacto" aria-describedby="inputGroupPrepend" value="<?php if ($idGrupo == 2){ echo $rowUser['email'];} ?>" required>
 							        <div class="invalid-feedback">Correo invalido</div>
 							    </div>
 						    </div>
