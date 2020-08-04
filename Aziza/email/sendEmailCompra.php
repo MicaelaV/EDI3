@@ -41,13 +41,13 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 
 //Username to use for SMTP authentication - use full email address for gmail
-$mail->Username = "@.com";
+$mail->Username = "azizabijouterie@gmail.com";
 
 //Password to use for SMTP authentication
-$mail->Password = ".";
+$mail->Password = "atrefuiio.15547";
 
 //Set who the message is to be sent from
-$mail->setFrom('@.com', utf8_decode('Aziza'));
+$mail->setFrom('azizabijouterie@gmail.com', utf8_decode('Aziza'));
 
 //Set an alternative reply-to address
 #$mail->addReplyTo('replyto@example.com', 'First Last');
@@ -60,12 +60,12 @@ $mail->Subject = utf8_decode('Gracias por compra en Aziza bijouterie');
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
 $mail->MsgHTML(utf8_decode("Estás recibiendo este mail porque comenzaste una compra en Aziza Bijouterie.
-	 Te enviaremos tu pedido, una vez que recibamos la confirmación del pago, para ello te dejamos nuestros datos bancarios
-	   CBU:
-	   Nombre Titular:
-	   Alias:
-	   Respondé este mail, una vez hecho el deposito.
-	   A continuación te dejamos el detalle de la compra para que puedas descargarlo:"));
+	 <br>Te enviaremos tu pedido, una vez que recibamos la confirmación del pago, para ello te dejamos nuestros datos bancarios:
+	   <br><br>CBU: XXXXXXXXX
+	   <br>Nombre Titular: Micaela Ibarra
+	   <br>Alias: ALIAS.COMPRA.AZIZA
+	   <br><br>Respondé este mail, una vez hecho el deposito.
+	   <br>Te dejamos el detalle de la compra para que puedas descargarlo"));
 
 //Replace the plain text body with one created manually
 $mail->AltBody = 'Este es un cuerpo de mensaje de texto sin formato';

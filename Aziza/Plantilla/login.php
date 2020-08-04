@@ -1,4 +1,5 @@
 <div class="col-md-6">
+    
     <div class="row justify-content-center">
         <?php if (isset($_GET['error'])) {
                 if ($_GET['error'] == "noexistuser") {

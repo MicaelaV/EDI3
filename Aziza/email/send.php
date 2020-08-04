@@ -45,10 +45,10 @@ if (condition) {
 	$mail->SMTPAuth = true;
 
 	//Username to use for SMTP authentication - use full email address for gmail
-	$mail->Username = "@.com";
+	$mail->Username = "azizabijouterie@gmail.com";
 
 	//Password to use for SMTP authentication
-	$mail->Password = ".";
+	$mail->Password = "atrefuiio.15547";
 
 	//Set who the message is to be sent from
 	$mail->setFrom($mailContact, utf8_decode('Aziza'));
@@ -56,7 +56,7 @@ if (condition) {
 	//Set an alternative reply-to address
 	#$mail->addReplyTo('replyto@example.com', 'First Last');
 	//Set who the message is to be sent to
-	$mail->addAddress('@.com');
+	$mail->addAddress('azizabijouterie@gmail.com');
 
 	//Set the subject line
 	$mail->Subject = utf8_decode('Consulta en Aziza');

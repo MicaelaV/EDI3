@@ -2,10 +2,10 @@
 
 $hostname = 'localhost';
 $database = 'aziza';
-$username = 'root';
-$password = '';
+$usernameDb = 'root';
+$passwordDb = '';
 
-$conexion = new mysqli($hostname,$username,$password,$database); 
+$conexion = new mysqli($hostname,$usernameDb,$passwordDb,$database); 
 mysqli_set_charset($conexion,'utf8');
 
 if ($conexion->connect_errno){
