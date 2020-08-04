@@ -70,7 +70,7 @@
 						    <div class="row justify-content-center">
 						      <div class="col-md-4 mb-3">
 							      <label for="validationTel" class="text-center contactoTexto">Tel&eacute;fono</label>
-							      <input type="number" class="form-control" id="telefono" max="99999999999" min="10000000" value="<?php if ($idGrupo == 2){ echo $rowUser['telefono'];} ?>" required>
+							      <input type="number" name="telefono" class="form-control" id="telefono" max="99999999999" min="10000000" value="<?php if ($idGrupo == 2){ echo $rowUser['telefono'];} ?>" required>
 							      <div class="invalid-feedback">Tel&eacute;fono invalido</div>
 							   </div>
 						    </div>

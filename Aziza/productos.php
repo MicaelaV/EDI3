@@ -238,29 +238,9 @@
 		<script src="js/main.js"></script> 
 		<script src="pluggins/sweetalert2.min.js"></script>
 		<script>
-			// function show(){
-
-		 //    $.ajax({
-		 //        url: 'consultarProductos.php',
-		 //        type: 'POST',
-		 //    })
-
-		 //    .done(function(response){
-		 //        $("#result").html(response);
-		 //    })
-
-		 //    .fail(function(jqXHR){
-		 //        console.log(jqXHR.statusText);
-		 //    });
-
-			// }
 
 			function pregunta(){
-	   //        if (confirm("¿Estas seguro de quiere realizar esta compra?")){
-				// 	document.tuformulario.submit()
-				// }else{
-				// 	alert("Su compra ha sido cancelada");
-				// }
+
 				Swal.fire({
 				        title: "¿Deseas confirmar la compra?",
 				        icon: 'warning',
