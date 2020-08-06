@@ -1,7 +1,8 @@
 # EDI3
-Pagina Web. Html, PHP, JavaScript. 
-Realizada para la materia EDI 3 en el 2019
-
+Pagina Web "AZIZA". 
+HTML5, PHP, JavaScript, CSS3. 
+Realizada para la materia EDI3 3 en el 2019
+Finalizado y entregado 6 de agosto 2020
 
 
 
